@@ -4,7 +4,7 @@ import Menu from "./pages/Menu"
 
 function App() {
   return (
-    <div className="">
+    <div className="App">
       <Menu/>
     </div>
   )
