@@ -5,7 +5,7 @@ import ThirdComponent from '../components/thirdhomecmpnt'
 
 const Home = () => {
   return (
-    <div className="w-screen  h-screen sm:w-screen sm:h-screen bg-white">
+    <div className="w-[100%]  h-full sm:w-screen sm:h-screen bg-white">
       <FirstComponent  />
       <SecondComponent />
       <ThirdComponent  />

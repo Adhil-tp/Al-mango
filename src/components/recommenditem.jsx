@@ -3,7 +3,7 @@ import Recommendimg from '../assets/images/recommendimg.jpeg'
 
 function Recommenditem() {
   return (
-    <div  className="relative w-60 h-60 bg-transparent border-0 flex-shrink-0 ">
+    <div  className="relative w-[230px] h-[240px]  bg-transparent border-0 flex-shrink-0 ">
     <img  className="w-full h-full rounded-2xl" src={Recommendimg} alt="image" />     
     <div className="absolute bottom-2 left-2 inset-0 flex items-center justify-center text-white bg-black bg-opacity-0 p-2 rounded-lg">
       <div>
