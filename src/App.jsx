@@ -1,11 +1,11 @@
 import React from "react"
 import './App.css'
-import Menu from "./pages/Menu"
+import Home from './pages/Home'
 
 function App() {
   return (
-    <div className="">
-      <Menu/>
+    <div className="App">
+      <Home/>
     </div>
   )
 }
