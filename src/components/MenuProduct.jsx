@@ -16,7 +16,7 @@ const MenuProduct = ({ product }) => {
   console.log(product);
 
   return (
-    <div className='flex items-center p-3 gap-x-5 '>
+    <div className='flex items-center p-3 gap-x-5'>
       <img src={product.image} alt="ProductImg" className='w-20 h-20 six:h-32 six:w-32 object-cover rounded-lg mr-4' />
       <div className='flex flex-col justify-between h-20 six:h-32 w-full'>
         <h4 className='flex text-sm md:text-lg lg:text-2xl font-semibold '>{truncatedProductName(product.name, 16)}</h4>
