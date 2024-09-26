@@ -1,19 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { CartContext } from '../context/CartContext';
 // import ProductImg from '../assets/images/ProductImage.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faPlus } from '@fortawesome/free-solid-svg-icons'
 // import foodProducts from '../data/foodProducts';
 
 const MenuProduct = ({ product }) => {
   const { addTOCart } = useContext(CartContext)
+  const [isAdded, setAdded] = useState(false)
+  const handleChange = (product) => {
+    setAdded(true)
+    addTOCart(product)
+  }
   const truncatedDescription = (description, maxLength) => {
     return description.length > maxLength ? description.slice(0, maxLength) + '...' : description
   }
   const truncatedProductName = (name, maxLength) => {
     return name.length > maxLength ? name.slice(0, maxLength) + '...' : name
   }
-  console.log(product);
 
   return (
     <div className='flex items-center p-3 gap-x-5'>
@@ -25,8 +29,8 @@ const MenuProduct = ({ product }) => {
           <p className='text-xs md:text-sm lg:text-lg font-bold mb-4 text-orange-500'>${product.price}</p>
         </div>
       </div>
-      <button className='bg-orange-500 text-white px-2 py-2 rounded hover:bg-red-600 h-8 flex items-center' onClick={() => addTOCart(product)}>
-        <FontAwesomeIcon icon={faPlus} />
+      <button className='bg-orange-500 text-white px-2 py-2 rounded hover:bg-red-600 h-8 flex items-center' onClick={() => handleChange(product)} disabled={isAdded}>
+        <FontAwesomeIcon icon={isAdded ? faCheck : faPlus} />
       </button>
     </div>
   )

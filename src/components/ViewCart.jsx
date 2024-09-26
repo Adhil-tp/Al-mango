@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ProductImg from '../assets/images/ProductImage.jpg'
+import { CartContext } from '../context/CartContext'
 
 const ViewCart = () => {
+  const { cartItems } = useContext(CartContext)
+  const cartCount = cartItems.length
   return (
     <div className='bg-orange-200  flex flex-row w-screen items-center justify-between p-4 '>
       <div className='flex flex-row gap-5 items-center justify-center'>
         <img src={ProductImg} alt="productImage" className='w-8 h-8 rounded sm:w-10 sm:h-10' />
         <div>
-          <h6 className='text-sm sm:text-base'>Product Name</h6>
-          <p className='text-xs sm:text-sm'>2 items</p>
+          <h6 className='text-xs sm:text-base'>{cartItems[cartCount - 1].name}</h6>
+          <p className='text-xs sm:text-sm'>{cartCount}-items</p>
         </div>
       </div>
       <div className='flex w-32 h-10 items-center justify-center'>
