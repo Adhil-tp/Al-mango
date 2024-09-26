@@ -18,7 +18,6 @@ function ThirdComponent() {
         <Recommenditem/>
         </div>
         {/* <div className="absolute inset-0 w-full h-[60%] bg-gradiant-to-b from-white/50 to-transparent"></div> */}
-  
         </div>
   );
 }
