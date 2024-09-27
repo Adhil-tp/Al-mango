@@ -12,3 +12,7 @@
   scrollbar-width: none;      
 }
 
+.hide-scrollbar{
+  scrollbar-width: none;
+}
+
