@@ -2,6 +2,7 @@ import React from 'react'
 import FirstComponent from '../components/firsthomecmpnt'
 import SecondComponent from '../components/secondhomecmpnt'
 import ThirdComponent from '../components/thirdhomecmpnt'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <FirstComponent  />
       <SecondComponent />
       <ThirdComponent  />
+      <Footer />
     </div>
   )
 }
