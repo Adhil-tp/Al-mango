@@ -15,7 +15,7 @@ function Overlapcmpnt() {
       {foodItems.map((item, index) => (
         <div
           key={item.id}
-          className={`${index === 1 ? "w-[11rem] xs:w-36  sm:w-40  md:w-48  lg:w-56 aspect-[2/3] mt-12  sm:mt-16 md:mt-12 md:mb-6  pb-4" : "w-[9rem] xs:w-28 xs:mb-4 sm:w-32 md:w-40  md:mb-14 lg:w-48 aspect-[2/3]"} flex justify-center flex-col bg-gray-800 text-white rounded-xl shadow-lg`}>
+          className={`${index === 1 ? "w-[11rem] xs:w-36  sm:w-40  md:w-48  lg:w-56 aspect-[2/3] mt-12  sm:mt-16 md:mt-12 md:mb-6 pb-4" : "w-[9rem] xs:w-28 xs:mb-4 sm:w-32 md:w-40  md:mb-14 lg:w-48 aspect-[2/3]"} flex justify-center flex-col bg-gray-800 text-white rounded-xl shadow-lg`}>
           <div className="flex flex-col w-full h-full justify-center items-center bg-transparent">
             <img
               src={item.img}
