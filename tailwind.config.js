@@ -8,12 +8,17 @@ module.exports = {
       md: "768px",
       lg: "976px",
       xl: "1440px",
+      six: "600px"
     },
     extend: {
+      colors:{
+        buttons:'#EFE3C8',
+        theme:"#D9D9D9"
+      },
       aspectRatio: {
         '2/3': '2 / 3',
     },
-  },
+    },
 },
   plugins: [],
 }
