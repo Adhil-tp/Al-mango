@@ -1,7 +1,7 @@
 import React from 'react';
 import FbIcon from '../assets/icons/fb.png';
 import InstaIcon from '../assets/icons/insta.png';
-import BgImage from '../assets/backgound/background.jpg'
+import BgImage from '../assets/backgound/background.jpg' 
 
 
 const Footer = () => {
