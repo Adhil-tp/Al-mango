@@ -28,7 +28,7 @@ const Description = () => {
 
 
   return (
-<section className=" w-[90%] ml-[1.4rem] flex flex-col justify-center  text-sm sm:bg-transparent rounded-lg" >
+<section className=" w-[90%] ml-[.5rem] flex flex-col justify-center  text-sm sm:bg-transparent rounded-lg" >
     <motion.div 
     variants={fadeIn("up",0.2)}
     initial="hidden"

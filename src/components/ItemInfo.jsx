@@ -7,7 +7,11 @@ const ItemInfo = () => {
   const [cart, setCart] = useState([]); 
   const [isAddedToCart,setIsAddedToCart] = useState(false)
   const [note,setNote] = useState('');
-  const [notes,setNotes] = useState([])
+  const [notes,setNotes] = useState([
+    'First Note',
+    'Second Note',
+    'Third Note'
+  ])
 
 
   const increaseQuantity = () => {
@@ -44,7 +48,7 @@ const ItemInfo = () => {
   }
 
   const deleteNote =(indexToDelete) =>{
-    setNotes(notes.filter((index)=> index == indexToDelete))
+    setNotes(notes.filter((_,index)=> index !== indexToDelete))
   }
 
   

@@ -2,6 +2,8 @@ import React from "react";
 import FoodImg1 from '../assets/images/foodimg2.jpg'; // Replace with actual image paths
 import FoodImg2 from '../assets/images/foodimg2.jpg';
 import FoodImg3 from '../assets/images/foodimg3.jpg';
+import {motion} from 'framer-motion'
+import {fadeIn} from '../variants'
 
 function Overlapcmpnt() {
   const foodItems = [
@@ -11,7 +13,12 @@ function Overlapcmpnt() {
   ];
 
   return (
-    <div className="w-full flex sm:justify-between justify-center items-center gap-2 pt-12 m-0 flex-nowrap top-3 md:top-8 lg:top-4 relative">
+    <motion.div 
+    variants={fadeIn("up",0.2)}
+    initial="hidden"
+    whileInView={"show"}
+    // viewport={{once:false,amount:0.7}}
+     className="w-full flex sm:justify-between justify-center items-center gap-2 pt-12 m-0 flex-nowrap top-3 md:top-8 lg:top-4 relative">
       {foodItems.map((item, index) => (
         <div
           key={item.id}
@@ -37,7 +44,7 @@ function Overlapcmpnt() {
           </div>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }
 
