@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CartIcon from '../assets/icons/Cart.png';
 import MenuIcon from "../assets/icons/Menu.png";
 
+
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to track if the menu is open or closed
 
@@ -14,7 +15,7 @@ function Header() {
       {/* Left Section: Logo and Brand Name */}
       <div className="flex items-center">
         {/* Responsive Logo */}
-        <div className="w-10 h-10 sm:w-16 sm:h-16 bg-gray-300 mr-2 sm:mr-4"></div>
+        <div className="w-10 h-10 sm:w-16 sm:h-16 bg-gray-300 mr-2 sm:mr-4"> </div>
         {/* Responsive Brand Name */}
         <h1 className="font-semibold text-lg sm:text-xl ml-2">Al-Mango</h1>
       </div>
