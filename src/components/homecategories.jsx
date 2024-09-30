@@ -1,5 +1,6 @@
 import React from "react";
 import Categoryimg from '../assets/images/categoryimg.jpg'
+import { Link } from "react-router-dom";
 
 function Category() {
   return (
@@ -9,7 +10,7 @@ function Category() {
           <img src={Categoryimg} className="w-full h-full rounded-full" alt="Category" />
         </div>
       </div>
-      <p className="bottom-0  text-black font-bold text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6">Starters</p>
+      <p className="bottom-0  text-black font-bold text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6"><Link to="/menu">Starters</Link></p>
     </div>
   );
 }

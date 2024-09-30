@@ -1,5 +1,6 @@
 import React from 'react'
 import Recommendimg from '../assets/images/recommendimg.jpeg'
+import { Link } from 'react-router-dom'
 
 function Recommenditem() {
   return (
@@ -9,7 +10,7 @@ function Recommenditem() {
       <div>
       <h1 className='text-sm font-bold'>Crawfish Stuffed Potatoes</h1><br/>
       <p>They use a lot of chili paste, red pepper, and hot oil in their food.</p><br/>
-      <a href="#" className="text-white underline text-xl">Order Now</a>
+      <a href="#" className="text-white underline text-xl"><Link to="/products">Order Now</Link></a>
       </div>
     </div>
     </div>
