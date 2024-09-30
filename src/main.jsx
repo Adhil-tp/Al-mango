@@ -7,5 +7,5 @@ import { CartProvider } from './context/CartContext.jsx'
 createRoot(document.getElementById('root')).render(
   <CartProvider>
     <App />
-  </CartProvider>
+  </CartProvider>,
 )

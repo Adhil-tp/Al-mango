@@ -1,5 +1,5 @@
 import React from "react";
-import FoodImg1 from '../assets/images/foodimg2.jpg'; // Replace with actual image paths
+import FoodImg1 from '../assets/images/foodimg2.jpg';
 import FoodImg2 from '../assets/images/foodimg2.jpg';
 import FoodImg3 from '../assets/images/foodimg3.jpg';
 import {motion} from 'framer-motion'

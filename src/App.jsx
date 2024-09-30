@@ -1,12 +1,13 @@
-import React from "react"
+import React from 'react'
 import './App.css'
 import Menu from "./pages/Menu"
-import Home from "./pages/Home"
 import ProductsDetails from "./pages/Products-details"
 import { BrowserRouter,Routes,Route } from "react-router-dom"
+import { useState } from "react"
+import reactLogo from "./assets/react.svg"
+import viteLogo from "/vite.svg"
 import AppLayout from "./components/AppLayout"
-
-
+import Home from "./pages/Home"
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />}  />
-          <Route path="menu" element={<Menu />} />
-          <Route path="/products" element={<ProductsDetails />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/product" element={<ProductsDetails />} />
           {/* <Route path="cart" element={<Cart />} /> */}
         </Route>
       </Routes>
