@@ -2,12 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import { CartContext } from './context/CartContext.jsx'
+import { CartProvider } from './context/CartContext.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <CartContext>
-      <App />
-    </CartContext>
-  </StrictMode>,
+  <CartProvider>
+    <App />
+  </CartProvider>,
 )
