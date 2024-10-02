@@ -4,6 +4,7 @@ import productImg from '../assets/images/ProductImage.jpg'
 const foodProducts = [
     {
       id: 1,
+      
       name: "Margherita Pizza",
       description: "Classic margherita pizza with fresh tomatoes, mozzarella cheese, and basil.",
       price: 9.99,

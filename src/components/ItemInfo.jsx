@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import burger from '../assets/Products/Burger.jpg';
+// import burger from '../assets/images/Products/Burger.jpg';
 
 
-const ItemInfo = () => {
+
+const ItemInfo = ({product}) => {
   const [quantity, setQuantity] = useState(1);
   const [cart, setCart] = useState([]); 
   const [isAddedToCart,setIsAddedToCart] = useState(false)
   const [note,setNote] = useState('');
-  const [notes,setNotes] = useState([
-    'First Note',
-    'Second Note',
-    'Third Note'
-  ])
+  const [notes,setNotes] = useState([])
 
 
   const increaseQuantity = () => {
@@ -66,27 +63,28 @@ const ItemInfo = () => {
     console.log('View Cart clicked')
   }
 
+  if(!product){
+    return null;
+  }
+
   return (
     <section className="lg:p-12 flex flex-col lg:flex-row md:flex-col sm:flex-col items-center gap-8">
       <div 
      className="relative md:w-full sm:w-screen lg:w-[60rem]">
         <img
-          src={burger}
+          src={product.image}
           className="md:w-full sm:h-[19rem] sm:w-screen lg:w-full object-cover lg:rounded-lg"
-          alt="Burger"
+          alt={product.name}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent rounded-lg"></div>
       </div>
       <div 
      className="p-6 mx-auto flex flex-col w-[90%] sm:bg-white md:bg-white lg:bg-transparent custom-background rounded-lg">
         <div className="mb-3">
-          <h1 className="text-2xl font-bold">Chicken Burger</h1>
+          <h1 className="text-2xl font-bold">{product.name}</h1>
         </div>
         <p className="text-sm">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-          repellendus dignissimos, facilis pariatur totam provident labore
-          aliquam vel quia aut magnam assumenda, corporis dolore ea reiciendis
-          veritatis praesentium.
+          {product.description}
         </p>
         
         <div className="pt-8 flex flex-row gap-4">

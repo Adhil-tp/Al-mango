@@ -9,6 +9,7 @@ import viteLogo from "/vite.svg"
 import AppLayout from "./components/AppLayout"
 import Home from "./pages/Home"
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -16,7 +17,7 @@ function App() {
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />}  />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/product" element={<ProductsDetails />} />
+          <Route path="/product/:id" element={<ProductsDetails />} />
           {/* <Route path="cart" element={<Cart />} /> */}
         </Route>
       </Routes>

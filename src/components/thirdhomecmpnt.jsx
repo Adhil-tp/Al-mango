@@ -3,7 +3,7 @@ import Recommenditem from "../components/recommenditem";
 
 function ThirdComponent() {
   return (
-    <div className="bg-white w-screen h-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-white w-screen h-auto px-4 sm:px-6 lg:px-8 pb-24 ">
         <div className="bg-white w-full h-[20%] text-center">
             <p className="text-black font-bold text-[18px] pt-1 pb-4">Recommend for you</p>
         </div>

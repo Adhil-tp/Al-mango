@@ -1,5 +1,5 @@
 import React from "react";
-import Firstimg from '../assets/images/homefirstimg.jpg'
+import Firstimg from '../assets/images/Products/Landinf-2.png'
 import Overlapcmpnt from "../components/overlapcmpnt";
 
 

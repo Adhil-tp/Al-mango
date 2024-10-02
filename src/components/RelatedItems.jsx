@@ -1,5 +1,5 @@
 import React from 'react'
-import burger from '../assets/Products/Burger.jpg'
+import burger from '../assets/images/Products/Burger.jpg'
 import {motion} from 'framer-motion'
 import {fadeIn} from '../variants'
 
@@ -56,7 +56,7 @@ const RelatedItems = () => {
         <h1 className='text-3xl font-bold'>Related Items</h1>
     </motion.div>
     <div
-     className=' grid grid-cols grid-flow-row md:grid-rows gap-12  lg:gap-36 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3  pt-14 '>
+     className=' grid grid-cols-2  grid-flow-row md:grid-rows gap-8  lg:gap-36 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3  pt-14 '>
       {items.map((item)=>(
 
         <motion.div 
@@ -64,8 +64,8 @@ const RelatedItems = () => {
         initial="hidden"
         whileInView={"show"}
         viewport={{once:false,amount:0.7}}
-         key={item.name}  className='relative md:flex-col lg:flex-row gap-36 w-60 h-60 text-center cursor-pointer'>
-          <img className='max-w-[100%] object-cover h-[100%] rounded-xl' src={item.image} alt={item.name} />
+         key={item.name}  className='relative  md:flex-col lg:flex-row gap-36 sm:w-60 sm:h-60 md:w-90 md:h-90 lg:w-90 lg:h-100 text-center cursor-pointer'>
+          <img className='max-w-[100%] object-cover h-[12rem] rounded-xl' src={item.image} alt={item.name} />
           <h1 className='absolute top-2 text-gray-100 text-xl pl-6 '>{item.name}</h1>
           <h1 className='absolute bottom-0 text-gray-100 text-2xl font-bold p-5'>{item.rate}</h1>
           </motion.div>

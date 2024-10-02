@@ -10,7 +10,7 @@ function Recommenditem() {
       <div>
       <h1 className='text-sm font-bold'>Crawfish Stuffed Potatoes</h1><br/>
       <p>They use a lot of chili paste, red pepper, and hot oil in their food.</p><br/>
-      <a href="#" className="text-white underline text-xl"><Link to="/products">Order Now</Link></a>
+      <p href="#" className="text-white underline text-xl"><Link to="/product">Order Now</Link></p>
       </div>
     </div>
     </div>
