@@ -7,8 +7,8 @@ const AppLayout = () => {
   return (
     <div>
       <Header />
-      <div className='mt-12 mb-12'> 
-      <Outlet />
+      <div className='mt-12 mb-12'>
+        <Outlet />
       </div>
       <Footer />
     </div>
