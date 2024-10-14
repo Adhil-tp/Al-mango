@@ -7,14 +7,14 @@ import ScrollToTop from './ScrollToTop'
 
 const AppLayout = () => {
   return (
-    <>
+    <div className='flex flex-col mi-h-screen'>
       <ScrollToTop />
       <Header />
-      <div className='mb-24' > 
-      <Outlet />
-      </div>
+      <main className='flex-1'> 
+         <Outlet />
+      </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

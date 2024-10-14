@@ -2,14 +2,18 @@ import React,{useState} from 'react'
 import {motion} from 'framer-motion'
 import {fadeIn} from '../variants'
 
-const Description = () => {
+const Description = ({product}) => {
 
     const [detailsTab,setDetailsTab] = useState("description")
+
+    if(!product){
+        return <p>Loading product details...</p>
+    }
 
     const tabs = {
         description:(
             <p>
-                This is the product description. It provides details about the product, such as features, materials, and usage instructions.
+                {product.description || "No description available for this products."}
             </p>
         ),
         additionalInfo:(
@@ -17,14 +21,9 @@ const Description = () => {
                 Here is some additional information about the product, including its dimensions, shipping details, and material composition.
             </p>
         ),
-        reviews:(
-            <p>
-                Customer reviews are listed here. See what other people think about the product!
-            </p>
-        ),
     }
 
-    const tabNames = ['description','additionalInfo','reviews']
+    const tabNames = ['description','additionalInfo']
 
 
   return (
@@ -39,7 +38,7 @@ const Description = () => {
             <button
             key={tab}
             className={`border border-gray-400 p-2  text-center ${detailsTab === tab ? 'bg-buttons': 'bg-gray-200'}`}
-            onClick={()=> setDetailsTab(tab)}>{tab==='description' ? 'Description' : tab === 'additionalInfo' ? 'Additional Information':'Reviews'} 
+            onClick={()=> setDetailsTab(tab)}>{tab==='description' ? 'Description' : 'Additional Information'} 
             </button>
         ))}
         </motion.div>
@@ -49,7 +48,7 @@ const Description = () => {
     initial="hidden"
     whileInView={"show"}
     viewport={{once:false,amount:0.7}}
-     className='p-6 m-7 border-2 border-black/10 '>
+     className='p-6 m-4 -mr-4 md:-mr-9 md:m-9  border-2 bg-white border-black/10 lg:rounded-lg'>
             {tabs[detailsTab]}
         </motion.div>
     <hr className="px-1 border border-gray-400 m-10" />
