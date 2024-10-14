@@ -59,7 +59,7 @@ const CartItem = ({ product, incrementItem, decrementItem, deleteItem,updateNote
                 <h4 className="font-semibold text-gray-700 mb-2">Notes:</h4>
                 {/* Display notes below the input */}
                 <ul className="mt-2">
-                    {product.note.map((note, index) => (
+                    {(product.note || []).map((note, index) => (
                         <li key={index} className="flex justify-between items-center">
                             {note}
                             <button

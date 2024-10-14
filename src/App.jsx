@@ -7,6 +7,7 @@ import AppLayout from "./components/AppLayout"
 import Home from "./pages/Home"
 import Cart from './pages/Cart'
 import { ProductsProvider } from './context/ProductsContext'
+import { Toaster } from 'react-hot-toast'
 
 
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <ProductsProvider>
      <BrowserRouter>
+      <Toaster  containerStyle={{top:400,left:20,bottom:20,right:20}}/>
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />}  />
