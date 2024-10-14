@@ -6,6 +6,7 @@ import { BrowserRouter,Routes,Route } from "react-router-dom"
 import AppLayout from "./components/AppLayout"
 import Home from "./pages/Home"
 import Cart from './pages/Cart'
+import About from './pages/About'
 import { ProductsProvider } from './context/ProductsContext'
 import { Toaster } from 'react-hot-toast'
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/category/:category" element={<Menu />} />
           <Route path="/product/:id" element={<ProductsDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/about" element={<About />} />
         </Route>
       </Routes>
      </BrowserRouter>
