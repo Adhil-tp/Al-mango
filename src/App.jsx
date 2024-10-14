@@ -5,8 +5,8 @@ import ProductsDetails from "./pages/Products-details"
 import { BrowserRouter,Routes,Route } from "react-router-dom"
 import AppLayout from "./components/AppLayout"
 import Home from "./pages/Home"
+import About from "./pages/About"
 import Cart from './pages/Cart'
-import About from './pages/About'
 import { ProductsProvider } from './context/ProductsContext'
 import { Toaster } from 'react-hot-toast'
 
@@ -22,6 +22,8 @@ function App() {
           <Route index element={<Home />}  />
           <Route path="/category/:category" element={<Menu />} />
           <Route path="/product/:id" element={<ProductsDetails />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/product" element={<ProductsDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/about" element={<About />} />
         </Route>
