@@ -6,6 +6,7 @@ import InstaIcon from '../assets/icons/Insta.png';
 import BgImage from '../assets/backgound/background.jpg' 
 
 const Footer = () => {
+  
   return (
     <footer id='footer' className="relative flex justify-between items-center text-white h-60 ">
       <div style={{ backgroundImage: `url(${BgImage})` }} className="absolute inset-0 bg-cover bg-center z-0">
