@@ -1,15 +1,18 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-
 import Header from './Navbar'
 import Footer from './Footer'
+import ScrollToTop from './ScrollToTop'
+
+
 const AppLayout = () => {
   return (
-    <div>
+    <div className='flex flex-col mi-h-screen'>
+      <ScrollToTop />
       <Header />
-      <div className='mt-12 mb-12'> 
-      <Outlet />
-      </div>
+      <main className='flex-1'> 
+         <Outlet />
+      </main>
       <Footer />
     </div>
   )
