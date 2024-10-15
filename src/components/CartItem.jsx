@@ -16,18 +16,19 @@ const CartItem = ({ product, incrementItem, decrementItem, deleteItem,updateNote
     };
 
     return (
-        <div className="border-b-2 last:border-none p-2 sm:p-4 flex flex-col">
-            <div className="flex items-center space-x-2 sm:space-x-4">
+        <div className=" last:border-none px-4 py-5 sm:p-4 flex flex-col border-b-8">
+            <div className="flex items-center justify-center space-x-2 sm:space-x-4">
                 <img
                     className="rounded-lg w-12 h-12 sm:w-16 sm:h-16 object-cover"
                     src={product.image}
                     alt={product.name}
                 />
-                <div className="flex flex-col flex-1">
-                    <h3 className="text-sm sm:text-lg font-bold text-orange-600 truncate text-left">
+                <div className="flex flex-row justify-between flex-1">
+                    <h3 className="flex justify-center mt-4 text-md sm:text-lg font-bold text-orange-600 truncate text-left">
                         {product.name}
                     </h3>
-                    <div className="flex items-center space-x-2 sm:space-x-4 mt-2">
+                    <div className="flex flex-col  items-center space-x-2 sm:space-x-4 mt-2">
+                        <div className="flex gap-2 ">
                         <button
                             className="bg-orange-200 text-gray-700 px-2 py-0 rounded hover:bg-orange-400"
                             onClick={() => decrementItem(product.id)}
@@ -43,7 +44,8 @@ const CartItem = ({ product, incrementItem, decrementItem, deleteItem,updateNote
                         >
                             +
                         </button>
-                        <p className="text-md sm:text-xl font-semibold text-gray-800 text-right">
+                        </div>
+                        <p className="text-md mt-3 sm:text-xl font-semibold text-gray-800 text-right">
                             ₹{(product.price * product.quantity).toFixed(2)}
                         </p>
                     </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import LogoName from '../assets/Icons/Al-Mango-Text.png'
 import Logo from '../assets/images/Products/Al-Mango-Logo.png'
-import FbIcon from '../assets/icons/fb.png';
-import InstaIcon from '../assets/icons/insta.png';
+import FbIcon from '../assets/Icons/Fb.png';
+import InstaIcon from '../assets/icons/Insta.png';
 import BgImage from '../assets/backgound/background.jpg' 
 
 const Footer = () => {

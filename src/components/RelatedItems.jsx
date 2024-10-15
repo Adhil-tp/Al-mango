@@ -1,11 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
+import { Link } from 'react-router-dom';
 
 const RelatedItems = ({ relatedProducts, currentProductId }) => {
 
   const relatedItems = relatedProducts.filter(
-    (item) => item.category === currentProductId && item.id !== currentProductId);
+    (item) => item.category === currentProductId && item.id !== currentProductId)
+    .slice(0,6);
   console.log('related items:',relatedItems);
 
   return (
@@ -21,9 +23,11 @@ const RelatedItems = ({ relatedProducts, currentProductId }) => {
       </motion.div>
 
       {/* Display related items */}
+      
       <div className='grid grid-cols-2 grid-flow-row md:grid-rows gap-6 lg:gap-36 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 pt-14'>
         {relatedItems.length > 0 ? (
           relatedItems.map((item) => (
+            <Link to={`/product/${item.id}`} key={item.id}>
             <motion.div 
               key={item.id}
               variants={fadeIn("up", 0.1)}
@@ -36,6 +40,7 @@ const RelatedItems = ({ relatedProducts, currentProductId }) => {
               <h1 className='absolute top-2 text-gray-100 text-xl pl-6 '>{item.name}</h1>
               <h1 className='absolute bottom-0 md:bottom-10 text-gray-100 text-2xl font-bold p-5'>${item.price}</h1>
             </motion.div>
+            </Link>
           ))
         ) : (
           <p className="text-gray-500">No related items found.</p>

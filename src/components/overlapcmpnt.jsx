@@ -28,14 +28,14 @@ function Overlapcmpnt({product}) {
               } rounded-full object-cover absolute`}
               style={{ marginTop: index === 1 ? '-70px' : '0' }}
             />
-            <div className={`${index === 1 ? "pt-6 px-2 md:pt-20 md:px-12 sm:pt-16 sm:px-4 xs:px-4" : "pt-6 px-2 md:pt-20 md:px-8 sm:pt-8 sm:px-2 xs:px-4 xs:pt-7"}`}>
+            <div className={`${index === 1 ? "pt-6 px-2 md:pt-20 md:px-12 sm:pt-16 sm:px-4 xs:px-4 " : "pt-6 px-2 md:pt-20 md:px-8 sm:pt-8 sm:px-2 xs:px-4 xs:pt-7"}`}>
               <h3 className="text-xs xs:text-[14px] sm:text-[14px] md:text-[14px] sm:text-xs md:text-xs lg:text-lg text-center mt-2 sm:mt-3 lg:mt-4 xs:font-thin">
                 {item.name}
               </h3>
               <p className="text-xs xs:text-[14px] sm:text-[14px] md:text-[14px] xs:mt-2 xs:mb-4 sm:text-xs mt-2 sm:mt-2 md:mt-3 lg:mt-4 text-center md:text-xs font-thin">
                 {item.price}
               </p>
-              <p className="text-xs xs:text-[9px] sm:text-9px] md:text-[8px] xs:mt-2 sm:text-xs mt-1 text-center md:text-xs font-thin">
+              <p className="text-xs tracking-wider  xs:text-[9px] sm:text-9px] md:text-[8px] xs:mt-2 sm:text-xs mt-1 text-center md:text-xs">
                 {item.description}
               </p>
             </div>

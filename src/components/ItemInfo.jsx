@@ -102,7 +102,7 @@ const ItemInfo = ({ product }) => {
               onChange={handleNoteChange}
               className="border border-black/20 rounded-lg mt-12 p-2 w-[16rem] sm:w-72 lg:ml-12"
             />
-            <button type="submit" className="mt-2 p-2 bg-buttons">
+            <button type="submit" className="mt-2 p-2 bg-buttons rounded-md">
               Submit Note
             </button>
           </form>

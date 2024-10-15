@@ -39,6 +39,12 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // useEffect(()=>{
+  //   const targetElement = document.getElementById("contactSection");
+  //   if(targetElement)
+
+  // })
+
   // Handle menu option click (close menu and navigate to the selected route)
   const handleMenuClick = (route) => {
     setIsMenuOpen(false); // Close the menu
@@ -95,10 +101,10 @@ function Header() {
             <Link to={'/'}>Home</Link>
           </li>
           <li className={`cursor-pointer px-3 py-1 rounded ${headerTextColor}`}>
-            <Link to={'/menu'}>About</Link>
+            <Link to={'/about'}>About</Link>
           </li>
           <li className={`cursor-pointer px-3 py-1 rounded ${headerTextColor}`}>
-            <Link to={'/contact'}>Contact</Link>
+            <Link to={'/about#contact'} onClick={()=>{setIsMenuOpen(false)}}>Contact</Link>
           </li>
         </ul>
 
@@ -119,7 +125,7 @@ function Header() {
 
       {/* Sliding Menu (Mobile Menu) */}
       <div
-        className={`fixed top-16 right-0 w-2/3 sm:w-48 h-40 sm:h-48 bg-gray-800 md:hidden text-white transform ${
+        className={`fixed top-16 right-0 w-2/3 sm:w-48 h-40 sm:h-48 bg-orange-500 opacity-85 md:hidden text-white  transform ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } transition-transform duration-300 ease-in-out z-40 p-4 overflow-y-auto`}
       >
@@ -127,10 +133,10 @@ function Header() {
           <li className="p-2 hover:bg-gray-700 cursor-pointer" onClick={() => handleMenuClick('/')}>
             Home
           </li>
-          <li className="p-2 hover:bg-gray-700 cursor-pointer" onClick={() => handleMenuClick('/menu')}>
-            Menu
+          <li className="p-2 hover:bg-gray-700 cursor-pointer" onClick={() => handleMenuClick('/about')}>
+            About
           </li>
-          <li className="p-2 hover:bg-gray-700 cursor-pointer" onClick={() => handleMenuClick('/contact')}>
+          <li className="p-2 hover:bg-gray-700 cursor-pointer" onClick={() => handleMenuClick('/about#contact')}>
             Contact
           </li>
         </ul>
