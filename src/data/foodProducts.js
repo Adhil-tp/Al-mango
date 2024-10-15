@@ -1,4 +1,3 @@
-
 import productImg from '../assets/images/ProductImage.jpg'
 import Category from '../components/homecategories';
 
