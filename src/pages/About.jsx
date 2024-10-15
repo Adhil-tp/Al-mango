@@ -14,8 +14,11 @@ const About = () => {
             </div>
             <div className="pt-10 gap-4 flex xs:flex-col md:flex-row xs:w-3/4 md:w-1/2 mx-auto justify-center items-center">
                 <img className="xs:w-48 md:w-60 rounded-lg" src={ProductImage} alt="branch1" />
+                <p>Branch 1</p>
                 <img className="xs:w-48 md:w-60 rounded-lg" src={ProductImage} alt="branch2" />
+                <p>Branch 1</p>
                 <img className="xs:w-48 md:w-60 rounded-lg" src={ProductImage} alt="branch3" />
+                <p>Branch 1</p>
             </div>
         </div>
     )
