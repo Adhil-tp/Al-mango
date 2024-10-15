@@ -1,53 +1,68 @@
-// src/hooks/useCart.jsx
-import { useState } from "react";
+// import { useEffect, useState } from "react";
 
-const useCart = (initialItems) => {
-    const [cartItems, setCartItems] = useState(initialItems);
+// const useCart = () => {
+//     // Initialize cartItems from localStorage or empty array if not available
+//     const [cartItems, setCartItems] = useState(() => {
+//         const savedItems = localStorage.getItem('cartItems');
+//         return savedItems ? JSON.parse(savedItems) : [];
+//     });
 
-    const incrementItem = (id) => {
-        setCartItems((prevItems) =>
-            prevItems.map((item) =>
-                item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-            )
-        );
-    };
+//     // Persist cartItems to localStorage whenever they change
+//     useEffect(() => {
+//         localStorage.setItem('cartItems', JSON.stringify(cartItems));
+//     }, [cartItems]);
 
-    const decrementItem = (id) => {
-        setCartItems((prevItems) =>
-            prevItems.map((item) =>
-                item.id === id && item.quantity > 1
-                    ? { ...item, quantity: item.quantity - 1 } : item
-            )
-        );
-    };
+//     // Increment the quantity of an item
+//     const incrementItem = (id) => {
+//         setCartItems((prevItems) =>
+//             prevItems.map((item) =>
+//                 item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+//             )
+//         );
+//     };
 
-    const deleteItem = (id) => {
-        setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
-    };
+//     // Decrement the quantity of an item, but don't go below 1
+//     const decrementItem = (id) => {
+//         setCartItems((prevItems) =>
+//             prevItems.map((item) =>
+//                 item.id === id && item.quantity > 1
+//                     ? { ...item, quantity: item.quantity - 1 }
+//                     : item
+//             )
+//         );
+//     };
 
-    const updateNote = (id, newNote) => {
-        setCartItems((prevItems) =>
-            prevItems.map((item) =>
-                item.id === id ? { ...item, note: newNote } : item
-            )
-        );
-    };
+//     // Delete an item from the cart
+//     const deleteItem = (id) => {
+//         const updatedCartItems = cartItems.filter((item) => item.id !== id);
+//         setCartItems(updatedCartItems);
+//     };
 
-    const calculateTotal = () => {
-        return cartItems.reduce(
-            (total, item) => total + item.price * item.quantity,
-            0
-        );
-    };
+//     // Update a note for a specific item in the cart
+//     const updateNote = (id, newNote) => {
+//         setCartItems((prevItems) =>
+//             prevItems.map((item) =>
+//                 item.id === id ? { ...item, note: newNote } : item
+//             )
+//         );
+//     };
 
-    return {
-        cartItems,
-        incrementItem,
-        decrementItem,
-        deleteItem,
-        updateNote,
-        calculateTotal,
-    };
-};
+//     // Calculate the total price of items in the cart
+//     const calculateTotal = () => {
+//         return cartItems.reduce(
+//             (total, item) => total + item.price * item.quantity,
+//             0
+//         );
+//     };
 
-export default useCart;
+//     return {
+//         cartItems,
+//         incrementItem,
+//         decrementItem,
+//         deleteItem,
+//         updateNote,
+//         calculateTotal,
+//     };
+// };
+
+// export default useCart;

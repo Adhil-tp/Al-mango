@@ -3,7 +3,7 @@ import React from "react";
 
 const CartEmpty = () => {
     return (
-        <p className="text-center text-gray-500">Your cart is empty</p>
+        <p className=" text-center p-24 text-gray-500">Your cart is empty</p>
     );
 };
 

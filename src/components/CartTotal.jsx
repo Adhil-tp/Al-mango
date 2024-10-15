@@ -1,18 +1,30 @@
 // src/components/CartTotal.js
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
-const CartTotal = ({ total }) => {
+const CartTotal = ({ total,placeOrder}) => {
+
+    const handlePlaceOrder = ()=>{
+        placeOrder();
+    }
+
+
     return (
-        <div className="mt-6 border-t-2 pt-4 flex justify-end items-center space-x-2 sm:space-x-4">
-            <h2 className="text-md sm:text-lg font-bold">Total:</h2>
-            <h2 className="text-md sm:text-lg font-bold">₹{total.toFixed(2)}</h2>
-            <div className="flex justify-center mt-4 mb-2">
-                    <button className="bg-orange-500 text-white font-bold py-2 px-4 sm:px-6 rounded-full shadow-lg hover:bg-orange-600 transition duration-300">
-                        Proceed to Order
-                    </button>
-                </div>
+        <div className="pt-4 pb-4 flex flex-row items-center justify-center space-x-4 sm:space-x-4 ">
+                    <p className="text-xl sm:text-xl">Total:</p>
+                    <p className="text-xl sm:text-xl font-bold pr-16">₹{total.toFixed(2)}</p>
+
+                    <div className="flex justify-center mt-4 mb-2">
+                        <button
+                            onClick={handlePlaceOrder}
+                            className="bg-orange-500 text-white font-bold text-lg py-2 px-4 sm:px-6 rounded-full shadow-lg hover:bg-orange-600 transition duration-300"
+                        >
+                            Proceed to Order
+                        </button>
+                    </div>
+            
         </div>
-        
     );
 };
 

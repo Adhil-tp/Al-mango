@@ -1,6 +1,22 @@
-*{
+html, body {
+  height: 100%;
   margin: 0;
-  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the content fills the viewport */
+}
+
+main {
+  flex: 1; /* Pushes footer to the bottom */
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
@@ -15,4 +31,16 @@
 .hide-scrollbar{
   scrollbar-width: none;
 }
+
+h1, h2, h3 {
+  font-family: 'Raleway', sans-serif;
+}
+p, body, .menu-description {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+
 
