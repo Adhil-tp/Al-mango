@@ -11,7 +11,6 @@ import { ProductsProvider } from './context/ProductsContext'
 import { Toaster } from 'react-hot-toast'
 
 
-
 function App() {
   return (
     <ProductsProvider>
