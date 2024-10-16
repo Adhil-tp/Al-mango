@@ -1108,7 +1108,7 @@ const foodProducts = [
     category: "Coffee Time",
     description: "Blueberry Frappe blends the sweetness of blueberries with rich coffee and ice.",
   },
-  {
+  { 
     id: 185,
     name: "Pistachio Latte",
     category: "Coffee Time",
