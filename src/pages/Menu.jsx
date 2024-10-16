@@ -37,7 +37,6 @@ const Menu = () => {
     <div className='mt-16 w-screen h-screen bg-stone-100 flex flex-col items-center'>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={filterProducts}/>
       <div className='flex justify-center w-screen'>
-        <h2 className='text-2xl'>{selectedCategory ? `Category: ${selectedCategory}` : 'All Products'}</h2>
       </div>
       <div className='grid grid-cols-1 six:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-8 overflow-auto w-full'>
         {filteredProducts.length > 0 ? (

@@ -743,24 +743,28 @@ const foodProducts = [
     name: "Roob Strawberry",
     category: "Roob Special",
     description: "Roob Strawberry is a delightful and refreshing drink made with the essence of ripe strawberries. This vibrant beverage offers a sweet and tangy flavor, perfect for enjoying on warm days. It's not only delicious but also packed with vitamins, making it a fantastic choice for hydration.",
+    homeDescription:"A refreshing and vibrant strawberry-flavored drink, perfect for hydration.",
   },
   {
     id: 125,
     name: "Roob Passion",
     category: "Roob Special",
     description: "Roob Passion is a tropical-inspired drink that blends the exotic flavors of passion fruit. This refreshing beverage has a unique sweet and tart profile, making it a perfect thirst-quencher. Ideal for summer, it can be enjoyed alone or as a mix in cocktails, providing a burst of tropical delight.",
+    homeDescription:"A tropical, sweet-tart passion fruit drink, perfect for summer refreshment or cocktails.",
   },
   {
     id: 126,
     name: "Roob Ruman",
     category: "Roob Special",
     description: "Roob Ruman is a rich and flavorful drink made from pomegranates. Known for its deep red color and tangy sweetness, this beverage is loaded with antioxidants and nutrients. It’s a great way to refresh and nourish your body while enjoying a deliciously fruity experience.",
+    homeDescription:"A tangy-sweet pomegranate drink, rich in antioxidants and nutrients.",
   },
   {
     id: 127,
     name: "Roob Mango",
     category: "Roob Special",
     description: "Roob Mango is a luscious drink that captures the essence of ripe mangoes. This sweet and creamy beverage is a tropical delight, perfect for indulging in any season. Packed with vitamins and minerals, it's a delicious way to hydrate and enjoy the taste of summer.",
+    homeDescription:"A sweet, creamy mango drink packed with vitamins, perfect for tropical refreshment",
   },
   {
     id: 128,
@@ -1121,7 +1125,9 @@ const foodProducts = [
     name: "Spanish Latte",
     category: "Coffee Time",
     description: "Spanish Latte combines espresso with sweetened condensed milk for a rich and creamy drink.",
-  }
+  },
+  
+
 ];;
   
   export default foodProducts;
