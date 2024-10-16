@@ -9,7 +9,7 @@ function FirstComponent({products}) {
     return <div>No products available.</div>
   }
 
-  const specialProducts = products.filter(product => product.category === "Roob Special");
+  const specialProducts = products.filter(product => product.category === "Roob Special").splice(0,3);
 
   return (
     <div className="bg-white w-full h-[45vh] sm:h-[55vh] lg:h-[80vh] relative ">
