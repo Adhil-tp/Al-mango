@@ -36,7 +36,7 @@ const MenuProduct = ({ product }) => {
         <h4 className='flex text-sm md:text-lg lg:text-2xl font-semibold '>{truncatedProductName(product.name, 16)}</h4>
         <p className='text-gray-600 mb-2 text-xs md:text-sm lg:text-lg'>{truncatedDescription(product.description, 30)}</p>
         <div className='flex'>
-          <p className='text-xs md:text-sm lg:text-lg font-bold mb-4 text-orange-500'>${product.price}</p>
+          <p className='text-xs md:text-sm lg:text-lg font-bold mb-4 text-orange-500'>OMR {product.price}</p>
         </div>
       </div>
       <button
