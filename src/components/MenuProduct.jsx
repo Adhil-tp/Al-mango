@@ -3,6 +3,7 @@ import { useCart } from '../context/CartContext'; // Import the custom hook
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
+import Img from "../assets/items/images/fries.avif"
 
 const MenuProduct = ({ product }) => {
   const { addToCart, cartItems } = useCart(); // Use the custom hook to access cart
@@ -27,15 +28,15 @@ const MenuProduct = ({ product }) => {
   };
 
   return (
-    <div className='flex items-center p-3 pr-8 gap-x-5'>
+    <div className='flex items-center  pr-4 pt-8 gap-x-5'>
       <Link to={`/product/${product.id}`} className="no-underline">
-        <img src={product.image} alt="ProductImg" className='w-20 h-20 six:h-32 six:w-32 object-cover rounded-lg mr-10' />
+        <img src={Img} alt="ProductImg" className='w-20 h-20 six:h-32 six:w-32 object-cover rounded-lg mr-10' />
       </Link>
       <div className='flex flex-col justify-between h-20 six:h-32 w-full'>
         <h4 className='flex text-sm md:text-lg lg:text-2xl font-semibold '>{truncatedProductName(product.name, 16)}</h4>
         <p className='text-gray-600 mb-2 text-xs md:text-sm lg:text-lg'>{truncatedDescription(product.description, 30)}</p>
         <div className='flex'>
-          <p className='text-xs md:text-sm lg:text-lg font-bold mb-4 text-orange-500'>${product.price}</p>
+          <p className='text-xs md:text-sm lg:text-lg font-bold mb-4 text-orange-500'>OMR {product.price}</p>
         </div>
       </div>
       <button
