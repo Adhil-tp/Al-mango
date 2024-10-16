@@ -277,7 +277,7 @@ const foodProducts = [
   {
     id: 40,
     name: "Crispy Combo",
-    category: "Sandwiches",
+    category: "Sandwiches", 
     description: "Our Crispy Wrap combines a crunchy fried chicken filling with fresh greens and a flavorful sauce, all wrapped in a warm tortilla. This wrap delivers a satisfying crunch and delicious flavors in every bite.",
     price:1.000
   },
@@ -288,7 +288,7 @@ const foodProducts = [
     description: "The Steak Combo Wrap features succulent slices of grilled steak, paired with sautéed peppers and onions, wrapped in a tortilla. This flavorful combination is perfect for meat lovers looking for a hearty meal.",
     price:1.200
   },
-{
+  {
     id: 42,
     name: "Nutella",
     category: "Ice Creams",
@@ -393,7 +393,7 @@ const foodProducts = [
     description: "The Romana plate offers a delightful selection of fresh fruits, carefully arranged to create an appealing presentation. This colorful dish is perfect for sharing or enjoying as a healthy dessert option.",
     price:1.300
   },
- {
+  {
     id: 57,
     name: "Redbull Passion",
     category: "Mojito",
@@ -512,7 +512,7 @@ const foodProducts = [
     description: "Cherry Mojito combines the sweet flavor of cherries with fresh mint and lime for a refreshing twist on the classic cocktail. This drink is perfect for cherry lovers, providing a delightful and fruity experience.",
     price:.900
   },
-{
+  {
     id: 74,
     name: "4 Season",
     category: "Cocktail Blends",
@@ -575,7 +575,7 @@ const foodProducts = [
     description: "4 Square is a delightful cocktail blend that features a combination of four distinct flavors, offering a unique and enjoyable drinking experience. Perfect for celebrations, this drink is sure to impress with its vibrant taste.",
     price:1.100
   },
- {
+  {
     id: 83,
     name: "Immune Booster",
     category: "Healthy Juices",
@@ -603,7 +603,7 @@ const foodProducts = [
     description: "Health Classic is a timeless juice made from a blend of fresh fruits and vegetables, including carrots, oranges, and beets. This revitalizing drink is packed with essential nutrients, making it a great choice for those seeking a healthy lifestyle.",
     price:1.200
   },
- {
+  {
     id: 87,
     name: "Mango",
     category: "Fresh Juices",
@@ -764,7 +764,7 @@ const foodProducts = [
     description: "Orange Pineapple juice is a tropical delight that brings together the sweet and tangy flavors of oranges and pineapples. This vibrant juice is perfect for energizing your day and is rich in vitamins, making it a deliciously healthy choice.",
     price:1.100
   },
- {
+  {
     id: 110,
     name: "Avocado",
     category: "Bottle Juices",
@@ -862,33 +862,37 @@ const foodProducts = [
     description: "Lemon Mint juice is a refreshing drink that combines the zesty flavor of lemons with the coolness of mint leaves. This invigorating beverage is perfect for hot days, offering a burst of freshness and revitalization that can brighten any occasion.",
     price:1.800
   },
- {
+  {
     id: 124,
     name: "Roob Strawberry",
     category: "Roob Special",
     description: "Roob Strawberry is a delightful and refreshing drink made with the essence of ripe strawberries. This vibrant beverage offers a sweet and tangy flavor, perfect for enjoying on warm days. It's not only delicious but also packed with vitamins, making it a fantastic choice for hydration.",
-    price:1.200
+    price:1.200,
+    homeDescription: "A refreshing and vibrant strawberry-flavored drink, perfect for hydration.",
   },
   {
     id: 125,
     name: "Roob Passion",
     category: "Roob Special",
     description: "Roob Passion is a tropical-inspired drink that blends the exotic flavors of passion fruit. This refreshing beverage has a unique sweet and tart profile, making it a perfect thirst-quencher. Ideal for summer, it can be enjoyed alone or as a mix in cocktails, providing a burst of tropical delight.",
-    price:1.400
+    price:1.400,
+    homeDescription: "A tropical, sweet-tart passion fruit drink, perfect for summer refreshment or cocktails.",
   },
   {
     id: 126,
     name: "Roob Ruman",
     category: "Roob Special",
     description: "Roob Ruman is a rich and flavorful drink made from pomegranates. Known for its deep red color and tangy sweetness, this beverage is loaded with antioxidants and nutrients. It’s a great way to refresh and nourish your body while enjoying a deliciously fruity experience.",
-    price:1.200
+    price:1.200,
+    homeDescription: "A tangy-sweet pomegranate drink, rich in antioxidants and nutrients.",
   },
   {
     id: 127,
     name: "Roob Mango",
     category: "Roob Special",
     description: "Roob Mango is a luscious drink that captures the essence of ripe mangoes. This sweet and creamy beverage is a tropical delight, perfect for indulging in any season. Packed with vitamins and minerals, it's a delicious way to hydrate and enjoy the taste of summer.",
-    price:1.200
+    price:1.200,
+    homeDescription: "A sweet, creamy mango drink packed with vitamins, perfect for tropical refreshment",
   },
   {
     id: 128,
@@ -897,7 +901,7 @@ const foodProducts = [
     description: "Roob Tooth is a unique and delightful beverage designed to be both tasty and beneficial. This drink combines a variety of flavors that cater to the palate while also offering health benefits. Perfect for any time of day, it brings a sweet and satisfying experience that delights the senses.",
     price:1.200
   },
-{
+  {
     id: 129,
     name: "Cerelac",
     category: "MilkShake",
@@ -1232,7 +1236,7 @@ const foodProducts = [
     description: "Al Nasser Milkshake offers a creamy blend of flavors for a satisfying beverage.",
     price:1.200
   },
- {
+  {
     id: 177,
     name: "Saffron Coffee",
     category: "Coffee Time",
@@ -1308,8 +1312,81 @@ const foodProducts = [
     category: "Coffee Time",
     description: "Spanish Latte combines espresso with sweetened condensed milk for a rich and creamy drink.",
     price:1.300
+  },
+  {
+    id: 188,
+    name: "PSG",
+    description: "A delicious and energizing milkshake.",
+    category: "Milk Shake"
+  },
+  {
+    id: 189,
+    name: "Iron Booster",
+    description: "A rich blend for an iron-packed treat.",
+    category: "Milk Shake"
+  },
+  { 
+    id: 190, 
+    name: "Thabakath", 
+    description: "A unique milkshake with bold flavors.", 
+    category: "Milk Shake" 
+  },
+  { 
+    id: 191, 
+    name: "Delight", 
+    description: "A delightful and creamy milkshake.", 
+    category: "Milk Shake" 
+  },
+  { 
+    id: 192, 
+    name: "Real Madrid", 
+    description: "A winning milkshake, full of flavor.", 
+    category: "Milk Shake" 
+  },
+  { 
+    id: 193, 
+    name: "Barcelona", 
+    description: "A smooth, indulgent treat to enjoy.", 
+    category: "Milk Shake" 
+  },
+  { 
+    id: 194, 
+    name: "Passion Breeze", 
+    description: "A tropical milkshake with passion fruit flavors.", 
+    category: "Milk Shake" 
+  },
+  { 
+    id: 195, 
+    name: "Viagra", 
+    description: "A powerful, invigorating milkshake.", 
+    category: "Milk Shake" 
+  },
+  { 
+    id: 196, 
+    name: "Choco Falooda", 
+    description: "A classic falooda twist with rich chocolate.", 
+    category: "Milk Shake" 
+  },
+  { 
+    id: 197, 
+    name: "Mango Saffron", 
+    description: "A luxurious milkshake with mango and saffron.", 
+    category: "Milk Shake" 
+  },
+  { 
+    id: 198, 
+    name: "Einstein", 
+    description: "A genius blend of flavors for the mind.", 
+    category: "Milk Shake" 
+  },
+  { 
+    id: 199, 
+    name: "Mango Shakaf", 
+    description: "A refreshing mango-flavored shake.", 
+    category: "Milk Shake" 
   }
+
+
 ];;
-  
+
 export default foodProducts;
-  
