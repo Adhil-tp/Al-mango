@@ -1398,7 +1398,6 @@ const foodProducts = [
     price:1.200 
   }
 
-
 ];;
 
 export default foodProducts;
