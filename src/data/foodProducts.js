@@ -1317,73 +1317,85 @@ const foodProducts = [
     id: 188,
     name: "PSG",
     description: "A delicious and energizing milkshake.",
-    category: "Milk Shake"
+    category: "Milk Shake",
+    price:1.300
   },
   {
     id: 189,
     name: "Iron Booster",
     description: "A rich blend for an iron-packed treat.",
-    category: "Milk Shake"
+    category: "Milk Shake",
+    price:1.100
   },
   { 
     id: 190, 
     name: "Thabakath", 
     description: "A unique milkshake with bold flavors.", 
-    category: "Milk Shake" 
+    category: "Milk Shake",
+    price:1.000
   },
   { 
     id: 191, 
     name: "Delight", 
     description: "A delightful and creamy milkshake.", 
-    category: "Milk Shake" 
+    category: "Milk Shake",
+    price:1.200 
   },
   { 
     id: 192, 
     name: "Real Madrid", 
     description: "A winning milkshake, full of flavor.", 
-    category: "Milk Shake" 
+    category: "Milk Shake",
+    price:1.200 
   },
   { 
     id: 193, 
     name: "Barcelona", 
     description: "A smooth, indulgent treat to enjoy.", 
-    category: "Milk Shake" 
+    category: "Milk Shake",
+    price:1.200 
   },
   { 
     id: 194, 
     name: "Passion Breeze", 
     description: "A tropical milkshake with passion fruit flavors.", 
-    category: "Milk Shake" 
+    category: "Milk Shake",
+    price:1.200 
   },
   { 
     id: 195, 
     name: "Viagra", 
     description: "A powerful, invigorating milkshake.", 
-    category: "Milk Shake" 
+    category: "Milk Shake",
+    price:1.400 
   },
   { 
     id: 196, 
     name: "Choco Falooda", 
     description: "A classic falooda twist with rich chocolate.", 
-    category: "Milk Shake" 
+    category: "Milk Shake",
+    price:1.200 
   },
   { 
     id: 197, 
     name: "Mango Saffron", 
     description: "A luxurious milkshake with mango and saffron.", 
-    category: "Milk Shake" 
+    category: "Milk Shake",
+    price:1.200 
   },
   { 
     id: 198, 
     name: "Einstein", 
     description: "A genius blend of flavors for the mind.", 
-    category: "Milk Shake" 
+    category: "Milk Shake",
+    price:1.200 
   },
   { 
     id: 199, 
     name: "Mango Shakaf", 
     description: "A refreshing mango-flavored shake.", 
-    category: "Milk Shake" 
+    category: "Milk Shake",
+    price:1.200 
   }
 
 
