@@ -1397,7 +1397,6 @@ const foodProducts = [
     category: "Milk Shake",
     price:1.200 
   }
-
 ];;
 
 export default foodProducts;
