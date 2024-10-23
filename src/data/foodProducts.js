@@ -202,7 +202,10 @@ const foodProducts = [
     name: "Mushroom Fries",
     category: "Fries",
     description: "Mushroom Fries offer a savory alternative to traditional fries, featuring crispy fried mushrooms that deliver a rich, earthy flavor. These fries are perfect for mushroom lovers looking for a unique snack.",
-    price:1.400
+    price:{
+      small:1.200,
+      large:1.400
+    }
   },
   {
     id: 30,
@@ -286,7 +289,10 @@ const foodProducts = [
     name: "Steak Combo",
     category: "Sandwiches",
     description: "The Steak Combo Wrap features succulent slices of grilled steak, paired with sautéed peppers and onions, wrapped in a tortilla. This flavorful combination is perfect for meat lovers looking for a hearty meal.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 42,
@@ -608,161 +614,230 @@ const foodProducts = [
     name: "Mango",
     category: "Fresh Juices",
     description: "Mango juice is a tropical delight made from ripe, juicy mangoes. This refreshing drink is packed with vitamins A and C, providing a sweet and tangy flavor that’s perfect for quenching your thirst on a hot day.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 88,
     name: "Avocado",
     category: "Fresh Juices",
     description: "Avocado juice is a creamy and nutrient-rich beverage made from ripe avocados. This unique juice is full of healthy fats, vitamins, and minerals, offering a smooth and rich flavor that can be enjoyed on its own or blended with other fruits.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 89,
     name: "Cocktail",
     category: "Fresh Juices",
     description: "Cocktail juice is a vibrant mix of various fruits, creating a deliciously sweet and tangy drink. This refreshing blend offers a burst of flavor and is perfect for parties or gatherings, providing a delightful tropical experience in every sip.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 90,
     name: "Pomegranate",
     category: "Fresh Juices",
     description: "Pomegranate juice is a rich, ruby-red drink known for its health benefits. Packed with antioxidants and vitamins, this juice provides a sweet and tart flavor that’s perfect for boosting your energy and overall wellness.",
-    price:1.100
+    price:{
+      small:.900,
+      large:1.100
+    }
   },
   {
     id: 91,
     name: "Carrot",
     category: "Fresh Juices",
     description: "Carrot juice is a vibrant orange drink that’s both sweet and nutritious. Rich in beta-carotene and vitamins, this juice is great for eye health and offers a refreshing, earthy flavor that can be enjoyed on its own or mixed with other juices.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 92,
     name: "Orange",
     category: "Fresh Juices",
     description: "Orange juice is a classic, refreshing beverage made from freshly squeezed oranges. Bursting with vitamin C, this tangy and sweet juice is perfect for breakfast or as a revitalizing drink anytime during the day.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 93,
     name: "Banana",
     category: "Fresh Juices",
     description: "Banana juice is a creamy and satisfying drink made from ripe bananas. Rich in potassium and vitamins, this smoothie-like juice offers a naturally sweet flavor that’s great for energy boosts and can be enjoyed alone or blended with other fruits.",
-    price:.700
+    price:{
+      small:.600,
+      large:.700
+    } 
   },
   {
     id: 94,
     name: "Lemon Mint",
     category: "Fresh Juices",
     description: "Lemon Mint juice is a refreshing drink that combines the zesty flavor of lemons with the coolness of mint leaves. This invigorating beverage is perfect for hot days, offering a burst of freshness and revitalization in every sip.",
-    price:.700
+    price:{
+      small:.600,
+      large:.700
+    }
   },
   {
     id: 95,
     name: "Kiwi",
     category: "Fresh Juices",
     description: "Kiwi juice is a tangy and tropical drink made from ripe kiwis. Packed with vitamin C and antioxidants, this vibrant green juice offers a unique flavor profile that’s both refreshing and invigorating, making it a great addition to your diet.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 96,
     name: "Pineapple",
     category: "Fresh Juices",
     description: "Pineapple juice is a sweet and tangy beverage made from fresh pineapples. Rich in vitamins and bromelain, this juice offers a refreshing tropical taste that’s perfect for boosting your mood and providing a burst of energy.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 97,
     name: "Strawberry",
     category: "Fresh Juices",
     description: "Strawberry juice is a sweet and delicious drink made from ripe strawberries. Packed with antioxidants and vitamin C, this refreshing beverage offers a bright flavor that’s perfect for summertime enjoyment or as a delightful addition to smoothies.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 98,
     name: "Papaya",
     category: "Fresh Juices",
     description: "Papaya juice is a tropical delight that’s both sweet and nutritious. Made from ripe papayas, this juice is rich in vitamins A and C, providing digestive benefits while offering a smooth, velvety texture that’s incredibly refreshing.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 99,
     name: "Apple",
     category: "Fresh Juices",
     description: "Apple juice is a classic favorite made from freshly pressed apples. This naturally sweet and crisp beverage is rich in antioxidants and provides a refreshing taste that’s perfect for any time of the day, whether served chilled or warm.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 100,
     name: "Guava",
     category: "Fresh Juices",
     description: "Guava juice is a tropical drink that combines the sweet and fragrant flavors of ripe guavas. This juice is packed with vitamins, fiber, and antioxidants, offering a refreshing taste that’s both delicious and beneficial for digestion.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 101,
     name: "Grape",
     category: "Fresh Juices",
     description: "Grape juice is a sweet and luscious beverage made from freshly pressed grapes. Known for its rich flavor and health benefits, this juice is a great source of antioxidants, making it a refreshing choice for quenching your thirst.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 102,
     name: "Sweet Melon",
     category: "Fresh Juices",
     description: "Sweet Melon juice is a light and refreshing drink made from sweet melons like cantaloupe and honeydew. This hydrating juice offers a naturally sweet flavor and is perfect for hot days, providing a deliciously fruity experience.",
-    price:.700
+    price:{
+      small:.600,
+      large:.700
+    }
   },
   {
     id: 103,
     name: "Watermelon",
     category: "Fresh Juices",
     description: "Watermelon juice is a hydrating and refreshing drink made from ripe watermelons. This naturally sweet juice is perfect for cooling down on hot days, packed with vitamins and minerals that offer a delightful taste with every sip.",
-    price:.700
+    price:{
+      small:.600,
+      large:.700
+    }
   },
   {
     id: 104,
     name: "Lemon Ginger",
     category: "Fresh Juices",
     description: "Lemon Ginger juice is a zesty and invigorating drink that combines the refreshing tartness of lemons with the warm spice of ginger. This juice is not only delicious but also provides digestive benefits, making it a great choice for wellness.",
-    price:.700
+    price:{
+      small:.600,
+      large:.700
+    }
   },
   {
     id: 105,
     name: "Lemon",
     category: "Fresh Juices",
     description: "Lemon juice is a tangy and refreshing beverage made from freshly squeezed lemons. Packed with vitamin C, this versatile juice can be enjoyed on its own or mixed with other juices for a flavorful and revitalizing drink.",
-    price:.600
+    price:{
+      small:.500,
+      large:.600
+    }
   },
   {
     id: 106,
     name: "Vimto",
     category: "Fresh Juices",
     description: "Vimto juice is a unique and fruity drink made from a blend of berries and spices. This refreshing beverage offers a sweet and tangy flavor profile, making it a popular choice for special occasions and casual enjoyment.",
-    price:.600
+    price:{
+      small:.500,
+      large:.600
+    }
   },
   {
     id: 107,
     name: "Beetroot",
     category: "Fresh Juices",
     description: "Beetroot juice is a vibrant and earthy drink made from fresh beets. Rich in nitrates and antioxidants, this juice offers numerous health benefits and a unique flavor that’s great for boosting stamina and overall vitality.",
-    price:1.100
+    price:{
+      small:.900,
+      large:1.100
+    }
   },
   {
     id: 108,
     name: "Mango Orange",
     category: "Fresh Juices",
     description: "Mango Orange juice is a tropical blend that combines the sweetness of mangoes with the citrusy zing of oranges. This refreshing drink is packed with vitamins, offering a deliciously sweet and tangy flavor that’s perfect for any occasion.",
-    price:1.100
+    price:{
+      small:.900,
+      large:1.100
+    }
   },
   {
     id: 109,
     name: "Orange Pineapple",
     category: "Fresh Juices",
     description: "Orange Pineapple juice is a tropical delight that brings together the sweet and tangy flavors of oranges and pineapples. This vibrant juice is perfect for energizing your day and is rich in vitamins, making it a deliciously healthy choice.",
-    price:1.100
+    price:{
+      small:.900,
+      large:1.100
+    }
   },
   {
     id: 110,
@@ -867,7 +942,10 @@ const foodProducts = [
     name: "Roob Strawberry",
     category: "Roob Special",
     description: "Roob Strawberry is a delightful and refreshing drink made with the essence of ripe strawberries. This vibrant beverage offers a sweet and tangy flavor, perfect for enjoying on warm days. It's not only delicious but also packed with vitamins, making it a fantastic choice for hydration.",
-    price:1.200,
+    price:{
+      small:1.000,
+      large:1.200
+    },
     homeDescription: "A refreshing and vibrant strawberry-flavored drink, perfect for hydration.",
   },
   {
@@ -875,7 +953,10 @@ const foodProducts = [
     name: "Roob Passion",
     category: "Roob Special",
     description: "Roob Passion is a tropical-inspired drink that blends the exotic flavors of passion fruit. This refreshing beverage has a unique sweet and tart profile, making it a perfect thirst-quencher. Ideal for summer, it can be enjoyed alone or as a mix in cocktails, providing a burst of tropical delight.",
-    price:1.400,
+    price:{
+      small:1.200,
+      large:1.400
+    },
     homeDescription: "A tropical, sweet-tart passion fruit drink, perfect for summer refreshment or cocktails.",
   },
   {
@@ -883,7 +964,10 @@ const foodProducts = [
     name: "Roob Ruman",
     category: "Roob Special",
     description: "Roob Ruman is a rich and flavorful drink made from pomegranates. Known for its deep red color and tangy sweetness, this beverage is loaded with antioxidants and nutrients. It’s a great way to refresh and nourish your body while enjoying a deliciously fruity experience.",
-    price:1.200,
+    price:{
+      small:1.000,
+      large:1.200
+    },
     homeDescription: "A tangy-sweet pomegranate drink, rich in antioxidants and nutrients.",
   },
   {
@@ -891,7 +975,10 @@ const foodProducts = [
     name: "Roob Mango",
     category: "Roob Special",
     description: "Roob Mango is a luscious drink that captures the essence of ripe mangoes. This sweet and creamy beverage is a tropical delight, perfect for indulging in any season. Packed with vitamins and minerals, it's a delicious way to hydrate and enjoy the taste of summer.",
-    price:1.200,
+    price:{
+      small:1.000,
+      large:1.200
+    },
     homeDescription: "A sweet, creamy mango drink packed with vitamins, perfect for tropical refreshment",
   },
   {
@@ -899,503 +986,720 @@ const foodProducts = [
     name: "Roob Tooth",
     category: "Roob Special",
     description: "Roob Tooth is a unique and delightful beverage designed to be both tasty and beneficial. This drink combines a variety of flavors that cater to the palate while also offering health benefits. Perfect for any time of day, it brings a sweet and satisfying experience that delights the senses.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 129,
     name: "Cerelac",
     category: "MilkShake",
     description: "Cerelac Milkshake combines nourishing Cerelac with creamy milk for a delightful drink.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 130,
     name: "Super Thamar",
     category: "MilkShake",
     description: "Super Thamar Milkshake features a unique blend of flavors, offering energy and nutrition.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 131,
     name: "Grand",
     category: "MilkShake",
     description: "Grand Milkshake provides a luxurious blend of creamy flavors for a smooth experience.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 132,
     name: "Mango Joy",
     category: "MilkShake",
     description: "Mango Joy Milkshake is a tropical delight with ripe mangoes and creamy milk.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 133,
     name: "Awar Galb",
     category: "MilkShake",
     description: "Awar Galb Milkshake combines unique flavors for a refreshing and satisfying drink.",
-    price:1.100
+    price:{
+      small:.900,
+      large:1.100
+    }
   },
   {
     id: 134,
     name: "Crystal",
     category: "MilkShake",
     description: "Crystal Milkshake brings elegance with its smooth and creamy texture.",
-    price:1.100
+    price:{
+      small:.900,
+      large:1.100
+    }
   },
   {
     id: 135,
     name: "Passion Mango",
     category: "MilkShake",
     description: "Passion Mango Milkshake combines mango and passion fruit for a refreshing treat.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 136,
     name: "Rooberry",
     category: "MilkShake",
     description: "Rooberry Milkshake blends berries and creamy milk for a delightful drink.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 137,
     name: "Aroob",
     category: "MilkShake",
     description: "Aroob Milkshake offers a creamy drink with a hint of sweetness.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 138,
     name: "Milano",
     category: "MilkShake",
     description: "Milano Milkshake is inspired by Italian flavors, offering a luxurious experience.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 139,
     name: "Aboodi Special",
     category: "MilkShake",
     description: "Aboodi Special Milkshake features a rich and indulgent blend of flavors.",
-    price:1.100
+    price:{
+      small:.900,
+      large:1.100
+    }
   },
   {
     id: 140,
     name: "Mango Nana",
     category: "MilkShake",
     description: "Mango Nana Milkshake delivers tropical sweetness with ripe mangoes.",
-    price:1.100
+    price:{
+      small:.900,
+      large:1.100
+    }
   },
   {
     id: 141,
     name: "Sp. Falooda",
     category: "MilkShake",
     description: "Sp. Falooda Milkshake combines traditional falooda flavors with creamy milk.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 142,
     name: "Mix Berry",
     category: "MilkShake",
     description: "Mix Berry Milkshake is bursting with the sweet and tangy flavors of various berries.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 143,
     name: "Classic",
     category: "MilkShake",
     description: "Classic Milkshake offers a timeless blend of creamy milk and sweet ice cream.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 144,
     name: "Cocktail Shakaf",
     category: "MilkShake",
     description: "Cocktail Shakaf Milkshake features a fun blend of flavors for a refreshing drink.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 145,
     name: "Dry Fig",
     category: "MilkShake",
     description: "Dry Fig Milkshake combines rich flavors of dried figs with creamy milk.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 146,
     name: "Cerlac Nutella",
     category: "MilkShake",
     description: "Cerlac Nutella Milkshake blends Cerelac with the rich flavor of Nutella.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 147,
     name: "Al Hilal",
     category: "MilkShake",
     description: "Al Hilal Milkshake offers a delightful creamy texture and flavor.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 148,
     name: "Raffaello",
     category: "MilkShake",
     description: "Raffaello Milkshake blends coconut and creamy flavors for a luxurious treat.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 149,
     name: "Desert",
     category: "MilkShake",
     description: "Desert Milkshake features rich flavors for a satisfying drink.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 150,
     name: "Mix Max",
     category: "MilkShake",
     description: "Mix Max Milkshake blends various flavors for a fun and refreshing drink.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 151,
     name: "Manchester",
     category: "MilkShake",
     description: "Manchester Milkshake combines creamy flavors for a delightful experience.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 152,
     name: "Glory",
     category: "MilkShake",
     description: "Glory Milkshake offers a smooth and creamy texture for a satisfying drink.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 153,
     name: "Boo Boo",
     category: "MilkShake",
     description: "Boo Boo Milkshake combines creamy milk with sweet flavors for a fun beverage.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 154,
     name: "Protein",
     category: "MilkShake",
     description: "Protein Milkshake provides a nutritious and energizing drink with packed protein.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 155,
     name: "Master",
     category: "MilkShake",
     description: "Master Milkshake combines various flavors for a truly satisfying experience.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 156,
     name: "Star",
     category: "MilkShake",
     description: "Star Milkshake offers a deliciously creamy texture and smooth flavor.",
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 157,
     name: "Lotus",
     category: "MilkShake",
     description: "Lotus Milkshake features a unique blend of creamy and sweet flavors.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 158,
     name: "Oreo",
     category: "MilkShake",
     description: "Oreo Milkshake combines the rich flavor of Oreos with creamy milk.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 159,
     name: "Nutella",
     category: "MilkShake",
     description: "Nutella Milkshake offers the indulgent taste of Nutella blended with milk.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 160,
     name: "Galaxy",
     category: "MilkShake",
     description: "Galaxy Milkshake is a unique drink that combines various flavors for a delightful experience.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 161,
     name: "KitKat",
     category: "MilkShake",
     description: "KitKat Milkshake blends the iconic flavors of KitKat with creamy milk.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 162,
     name: "Kinder",
     category: "MilkShake",
     description: "Kinder Milkshake combines the sweet flavor of Kinder chocolate with creamy milk.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 163,
     name: "Snickers",
     category: "MilkShake",
     description: "Snickers Milkshake blends the rich taste of Snickers with creamy goodness.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 164,
     name: "Milkshake Strawberry",
     category: "MilkShake",
     description: "Milkshake Strawberry features the sweet taste of strawberries blended with milk.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 165,
     name: "Milkshake Mango",
     category: "MilkShake",
     description: "Milkshake Mango offers the refreshing taste of mangoes blended with creamy milk.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 166,
     name: "Milkshake Pistachio",
     category: "MilkShake",
     description: "Milkshake Pistachio combines the unique flavor of pistachios with creamy goodness.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 167,
     name: "Milkshake Vanilla",
     category: "MilkShake",
     description: "Milkshake Vanilla offers a classic vanilla flavor blended into a creamy shake.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 168,
     name: "Milkshake Chocolate",
     category: "MilkShake",
     description: "Milkshake Chocolate combines rich chocolate flavor with creamy milk.",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   {
     id: 169,
     name: "Majoon",
     category: "MilkShake",
     description: "Majoon Milkshake features a blend of unique flavors for a refreshing drink.",
-    price:1.400
+    price:{
+      small:1.200,
+      large:1.400
+    }
   },
   {
     id: 170,
     name: "Newton",
     category: "MilkShake",
     description: "Newton Milkshake offers a delightful mix of flavors for a satisfying beverage.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 171,
     name: "Vaccine",
     category: "MilkShake",
     description: "Vaccine Milkshake is a fun and unique blend of flavors for a delicious drink.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 172,
     name: "Lexus",
     category: "MilkShake",
     description: "Lexus Milkshake combines creamy flavors with a touch of sweetness.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 173,
     name: "Mehrish",
     category: "MilkShake",
     description: "Mehrish Milkshake offers a rich and creamy drink known for its delicious flavor.",
-    price:1.400
+    price:{
+      small:1.200,
+      large:1.400
+    }
   },
   {
     id: 174,
     name: "Gazpacho",
     category: "MilkShake",
     description: "Gazpacho Milkshake features a refreshing blend of flavors for a unique experience.",
-    price:1.400
+    price:{
+      small:1.200,
+      large:1.400
+    }
   },
   {
     id: 175,
     name: "Rambo",
     category: "MilkShake",
     description: "Rambo Milkshake combines various flavors for a fun and energizing drink.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 176,
     name: "Al Nasser",
     category: "MilkShake",
     description: "Al Nasser Milkshake offers a creamy blend of flavors for a satisfying beverage.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 177,
     name: "Saffron Coffee",
     category: "Coffee Time",
     description: "Saffron Coffee blends aromatic saffron with rich coffee for a unique flavor.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 178,
     name: "Cold Coffee",
     category: "Coffee Time",
     description: "Cold Coffee is a refreshing blend of brewed coffee served chilled with milk and ice.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 179,
     name: "Mocha",
     category: "Coffee Time",
     description: "Mocha is a delicious combination of espresso, steamed milk, and rich chocolate.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 180,
     name: "Pistachio Coffee",
     category: "Coffee Time",
     description: "Pistachio Coffee offers a delightful mix of coffee and the nutty flavor of pistachios.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 181,
     name: "Toffee Coffee",
     category: "Coffee Time",
     description: "Toffee Coffee features the sweet taste of toffee blended with rich coffee.",
-    price:1.300
+    price:{
+      small:1.100,
+      large:1.300
+    }
   },
   {
     id: 182,
     name: "Pistachio Frappe",
     category: "Coffee Time",
     description: "Pistachio Frappe is a creamy iced coffee drink with a hint of pistachio flavor.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 183,
     name: "Strawberry Frappe",
     category: "Coffee Time",
     description: "Strawberry Frappe combines fresh strawberries with blended coffee and ice.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 184,
     name: "Blueberry Frappe",
     category: "Coffee Time",
     description: "Blueberry Frappe blends the sweetness of blueberries with rich coffee and ice.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 185,
     name: "Pistachio Latte",
     category: "Coffee Time",
     description: "Pistachio Latte features espresso and steamed milk with a delightful pistachio flavor.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 186,
     name: "Banana Coffee",
     category: "Coffee Time",
     description: "Banana Coffee blends ripe bananas with rich coffee for a creamy and sweet beverage.",
-    price:1.200
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   {
     id: 187,
     name: "Spanish Latte",
     category: "Coffee Time",
     description: "Spanish Latte combines espresso with sweetened condensed milk for a rich and creamy drink.",
-    price:1.300
+    price:{
+      small:1.100,
+      large:1.300
+    }
   },
   {
     id: 188,
     name: "PSG",
     description: "A delicious and energizing milkshake.",
     category: "Milk Shake",
-    price:1.300
+    price:{
+      small:1.100,
+      large:1.300
+    }
   },
   {
     id: 189,
     name: "Iron Booster",
     description: "A rich blend for an iron-packed treat.",
     category: "Milk Shake",
-    price:1.100
+    price:{
+      small:.900,
+      large:1.100
+    }
   },
   { 
     id: 190, 
     name: "Thabakath", 
     description: "A unique milkshake with bold flavors.", 
     category: "Milk Shake",
-    price:1.000
+    price:{
+      small:.800,
+      large:1.000
+    }
   },
   { 
     id: 191, 
     name: "Delight", 
     description: "A delightful and creamy milkshake.", 
     category: "Milk Shake",
-    price:1.200 
+    price:{
+      small:1.000,
+      large:1.200
+    } 
   },
   { 
     id: 192, 
     name: "Real Madrid", 
     description: "A winning milkshake, full of flavor.", 
     category: "Milk Shake",
-    price:1.200 
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   { 
     id: 193, 
     name: "Barcelona", 
     description: "A smooth, indulgent treat to enjoy.", 
     category: "Milk Shake",
-    price:1.200 
+    price:{
+      small:1.000,
+      large:1.200
+    } 
   },
   { 
     id: 194, 
     name: "Passion Breeze", 
     description: "A tropical milkshake with passion fruit flavors.", 
     category: "Milk Shake",
-    price:1.200 
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   { 
     id: 195, 
     name: "Viagra", 
     description: "A powerful, invigorating milkshake.", 
     category: "Milk Shake",
-    price:1.400 
+    price:{
+      small:1.200,
+      large:1.400
+    }
   },
   { 
     id: 196, 
     name: "Choco Falooda", 
     description: "A classic falooda twist with rich chocolate.", 
     category: "Milk Shake",
-    price:1.200 
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   { 
     id: 197, 
     name: "Mango Saffron", 
     description: "A luxurious milkshake with mango and saffron.", 
     category: "Milk Shake",
-    price:1.200 
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   { 
     id: 198, 
     name: "Einstein", 
     description: "A genius blend of flavors for the mind.", 
     category: "Milk Shake",
-    price:1.200 
+    price:{
+      small:1.000,
+      large:1.200
+    }
   },
   { 
     id: 199, 
     name: "Mango Shakaf", 
     description: "A refreshing mango-flavored shake.", 
     category: "Milk Shake",
-    price:1.200 
+    price:{
+      small:1.000,
+      large:1.200
+    }
   }
 
 ];;
