@@ -34,11 +34,11 @@ const Menu = () => {
   };
 
   return (
-    <div className='mt-16 w-screen h-screen bg-stone-100 flex flex-col items-center'>
+    <div className='mt-14 w-screen  bg-stone-100 flex flex-col items-center'>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={filterProducts}/>
       <div className='flex justify-center w-screen'>
       </div>
-      <div className='grid grid-cols-1 six:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-8 overflow-auto w-full'>
+      <div className='grid grid-cols-1 six:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-16 overflow-auto w-full'>
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product,index) => (
             <MenuProduct 

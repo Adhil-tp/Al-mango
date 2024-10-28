@@ -6,12 +6,17 @@ import LogoText from '../assets/Icons/Al-Mango-Text.png'
 import { motion } from 'framer-motion';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
+import { useCart } from '../context/CartContext';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to track if the menu is open or closed
   const [scrolled, setScrolled] = useState(false); // State to track scrolling
   const location = useLocation();
   const navigate = useNavigate();
+
+  const {cartItems} = useCart();
+
+  const totalCartItems = cartItems.reduce((acc,item)=>acc + item.quantity,0)
 
   // Scroll effect to change the background when the user scrolls
   useEffect(() => {
@@ -68,7 +73,7 @@ function Header() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className={`flex justify-between items-center px-4 w-screen h-14 lg:h-16 fixed top-0 left-0 z-50 transition-all duration-300 ${headerBgColor}`}
+      className={`flex justify-between items-center px-2 w-screen h-14 lg:h-16 fixed top-1 left-0 z-50 transition-all duration-300 ${headerBgColor}`}
     >
       <ScrollToTop />
       {/* Left Section: Logo and Brand Name */}
@@ -79,7 +84,7 @@ function Header() {
         </div>
         {/* Responsive Brand Name */}
         {/* <h1 className={`font-semibold text-lg sm:text-xl ml-2 ${headerTextColor}`}>Al-Mango</h1> */}
-        <div className="w-24 pt-4 sm:w-16 md:w-24 lg:w-24 sm:h-16 mr-2 sm:mr-4 md:mt-2">
+        <div className="w-24 pt-5 sm:w-24 md:w-24 lg:w-24 sm:h-16 mr-2 sm:mr-4 md:mt-2">
           <img src={LogoText} alt="logo" />
         </div>
       </div>
@@ -90,6 +95,11 @@ function Header() {
         {!isCart ?(
         <Link to={'/cart'}>
            <img src={CartIcon} alt="Cart" className={`w-5 h-5 sm:w-6 sm:h-6 ${iconColor}`} />
+           {totalCartItems > 0 && (
+              <span className="absolute -top-1 left-3   w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+                {totalCartItems}
+              </span>
+            )}
         </Link>
         ):(
           ''

@@ -3,7 +3,7 @@ import { useCart } from '../context/CartContext'; // Import the custom hook
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
-import Img from "../assets/items/images/fries.avif"
+// import Img from "../assets/items/images/fries.avif"
 
 const MenuProduct = ({ product }) => {
   const { addToCart, cartItems } = useCart(); // Use the custom hook to access cart
@@ -28,9 +28,9 @@ const MenuProduct = ({ product }) => {
   };
 
   return (
-    <div className='flex items-center  pr-4 pt-8 gap-x-5'>
+    <div className='flex items-center  pr-4 lg:pt-24 gap-x-5 pb-4 lg:pb-20 border-b-2 overflow-hidden'>
       <Link to={`/product/${product.id}`} className="no-underline">
-        <img src={Img} alt="ProductImg" className='w-20 h-20 six:h-32 six:w-32 object-cover rounded-lg mr-10' />
+        <img src={product.image} alt="ProductImg" className='w-20 h-20 six:h-32 six:w-32 object-cover rounded-lg mr-10' />
       </Link>
       <div className='flex flex-col justify-between h-20 six:h-32 w-full'>
         <h4 className='flex text-sm md:text-lg lg:text-2xl font-semibold '>{truncatedProductName(product.name, 16)}</h4>

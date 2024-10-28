@@ -2,7 +2,7 @@ import React from "react";
 import {motion} from 'framer-motion';
 import {fadeIn} from '../variants';
 import { Link } from "react-router-dom";
-import Icon from "../assets/images/Products/Beef Cheetos Fries.jpg"
+// import Icon from "../assets/images/Products/Beef Cheetos Fries.jpg"
 
 function Overlapcmpnt({product}) {
 
@@ -14,17 +14,17 @@ function Overlapcmpnt({product}) {
       variants={fadeIn("up", 0.2)}
       initial="hidden"
       whileInView={"show"}
-      className=" flex sm:justify-between justify-center items-center gap-3 sm:right-4 pt-12 xs:pt-20 md:pt-24 m-0 flex-nowrap top-3 md:top-8 lg:top-4 relative"
+      className=" flex sm:justify-between justify-center items-center gap-3 sm:right-4 pt-12 xs:pt-20 md:pt-24 m-0 flex-nowrap top-3 md:top-8 lg:top-4 relative "
     >
       {product.map((item, index) => (
       <Link to={`/product/${item.id}`} key={item.id}>
         <div
           key={item.id}
-          className={`${index === 1 ? " xs:w-24  sm:w-[8rem]  md:w-36  lg:w-56 aspect-[2/3] mt-12  sm:mt-16 md:mt-12 md:mb-6 pb-4" : " xs:w-20  xs:mb-4 sm:w-[7rem] md:w-36  md:mb-14 lg:w-48 aspect-[2/3]"} flex justify-center flex-col bg-landing text-white rounded-xl shadow-custom-x-y`}
+          className={`${index === 1 ? " xs:w-24  sm:w-[8rem]  md:w-36  lg:w-56 aspect-[2/3] mt-12  sm:mt-16 md:mt-12 md:mb-6 pb-4" : " xs:w-20  xs:mb-4 sm:w-[7rem] md:w-36  md:mb-14 lg:w-48 aspect-[2/3]"} flex justify-center flex-col bg-landing opacity-90 text-white rounded-xl shadow-custom-x-y`}
         >
           <div className="flex flex-col w-full h-full justify-center items-center bg-transparent">
             <img
-              src={Icon}
+              src={item.image}
               alt={item.name}
               className={`${
                 index === 1

@@ -88,7 +88,7 @@ const ItemInfo = ({ product }) => {
       <div className="p-6 mx-auto flex flex-col w-[90%] sm:bg-white md:bg-white lg:bg-transparent custom-background rounded-lg">
         <div className="mb-3 flex justify-between">
           <h1 className="text-2xl font-bold">{product.name}</h1>
-          <h1 className="text-2xl font-bold">₹{product.price}</h1>
+          <p className="text-2xl font-bold text-red-500">OMR {product.price}</p>
         </div>
         <p className="text-sm">{product.description}</p>
 

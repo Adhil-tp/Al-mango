@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
 import { Link } from 'react-router-dom';
-import image from '../assets/backgound/background.jpg'
+// import image from '../assets/backgound/background.jpg'
 
 const RelatedItems = ({ relatedProducts, currentProductId }) => {
 
@@ -37,7 +37,7 @@ const RelatedItems = ({ relatedProducts, currentProductId }) => {
               viewport={{ once: false, amount: 0.7 }}
               className='relative md:flex-col lg:flex-row gap-36 xs:w-26 xs:h-26 md:w-90 md:h-90 lg:w-90 lg:h-100 text-center cursor-pointer'
             >
-              <img className='max-w-[100%] object-cover h-[12rem] rounded-xl' src={image} alt={item.name} />
+              <img className='max-w-[100%] object-cover h-[12rem] rounded-xl' src={item.image} alt={item.name} />
               <h1 className='absolute top-2 text-gray-100 text-xl xs:text-md sm:text-sm md:text-md  pl-6 '>{item.name}</h1>
               <h1 className='absolute bottom-0 md:bottom-10 text-gray-100 text-2xl font-bold p-5'>${item.price}</h1>
             </motion.div>
