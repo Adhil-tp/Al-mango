@@ -1701,7 +1701,6 @@ const foodProducts = [
       large:1.200
     }
   }
-
 ];;
 
 export default foodProducts;
