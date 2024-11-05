@@ -792,11 +792,11 @@ const foodProducts = [
     name: "Kiwi",
     category: "Fresh Juices",
     description: "Kiwi juice is a tangy and tropical drink made from ripe kiwis. Packed with vitamin C and antioxidants, this vibrant green juice offers a unique flavor profile that’s both refreshing and invigorating, making it a great addition to your diet.",
+    image:"/public/ProductImages/95.jpg",
     price:{
       small:.800,
       large:1.000
     },
-    image:"/public/ProductImages/95.jpg"
   },
   {
     id: 96,
