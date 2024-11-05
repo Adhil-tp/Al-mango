@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 const CartItem = ({ product }) => {
     const { incrementItem, decrementItem, deleteItem, updateNote, addToCart } = useCart();
@@ -39,17 +40,20 @@ const CartItem = ({ product }) => {
     return (
         <div className="custom-background  sm:px-4  sm:py-5 p-4 sm:p-4 flex flex-col border-b-8 rounded-lg">
             <div className="flex items-center justify-center space-x-2 sm:space-x-4">
+               <Link to={`/product/${product.id}`}>
                 <img
                     className="rounded-lg w-12 h-12 sm:w-16 sm:h-16 object-cover"
                     src={product.image}
                     alt={product.name}
                 />
+                </Link>
                 <div className="flex flex-row justify-between flex-1 ">
-
-                    <div className="flex flex-col w-25 sm:w-44 pt-2 sm:pt-0 ">
+                    <div className="flex flex-col w-25 sm:w-36  pt-2 sm:pt-0 ">
+                    <Link to={`/product/${product.id}`}>
                     <h3 className="flex justify-center  text-md sm:text-lg font-bold text-orange-600  text-left">
                         {product.name}
                     </h3>
+                    </Link>
                     {/* Display the selected size or null */}
 
                     {size ?
@@ -127,7 +131,7 @@ const NoteInput = ({ note, setNote, handleSubmit }) => {
     return (
         <div className="flex flex-row">
             <input
-                className="p-2  sm:pr-20 md:pr-20 mr-4 border rounded text-xs sm:text-sm border-orange-400"
+                className=" mr-4 border rounded text-xs sm:text-sm border-orange-400"
                 type="text"
                 value={note}
                 onChange={(e) => setNote(e.target.value)}

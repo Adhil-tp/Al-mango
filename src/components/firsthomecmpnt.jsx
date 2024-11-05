@@ -18,7 +18,7 @@ function FirstComponent({products}) {
         <div className="absolute bottom-0 w-full h-1/4 bg-gradient-to-b from-transparent to-white"></div>
         </div>
         <div className="absolute inset-0 flex justify-center items-center pb-16 sm:pb-10">
-        <div className="w-[90%] sm:w-[80%] lg:w-[70%]">
+        <div className="w-[100%] sm:w-[100%] lg:w-[70%]">
             <Overlapcmpnt key={products} product={specialProducts}  />
         </div>
         </div> 

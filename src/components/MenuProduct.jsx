@@ -58,8 +58,10 @@ const MenuProduct = ({ product }) => {
         <img src={product.image} alt="ProductImg" className='w-20 h-20 six:h-32 six:w-32 object-cover rounded-lg mr-10' />
       </Link>
       <div className='flex flex-col justify-between h-20 six:h-32 w-full'>
+        <Link to={`/product/${product.id}`}>
         <h4 className='flex text-sm md:text-lg lg:text-2xl font-semibold '>{truncatedProductName(product.name, 16)}</h4>
         <p className='text-gray-600 mb-2 text-xs md:text-sm lg:text-lg'>{truncatedDescription(product.description, 30)}</p>
+        </Link>
         <div className="flex">
           {typeof product.price === "object" ? (
             isAdded ? (

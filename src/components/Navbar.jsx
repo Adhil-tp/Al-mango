@@ -79,7 +79,7 @@ function Header() {
       {/* Left Section: Logo and Brand Name */}
       <Link to={'/'}><div className="flex items-center">
         {/* Responsive Logo */}
-        <div className="w-14 pt-3 sm:w-14 sm:h-16 lg:mt-2 mr-1 sm:mr-4 md:mt-6">
+        <div className="w-14 pt-2 sm:w-14 sm:h-16 lg:mt-2 mr-1 sm:mr-4 md:mt-6">
           <img src={Logo} alt="logo" />
         </div>
         {/* Responsive Brand Name */}
