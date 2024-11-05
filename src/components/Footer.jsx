@@ -8,7 +8,8 @@ import BgImage from '../assets/backgound/background.jpg'
 const Footer = () => {
   
   return (
-    <footer id='footer' className="relative flex justify-between items-center text-white h-60 ">
+
+    <footer id='footer' className="relative bottom-0 flex justify-between items-center text-white h-60 ">
       <div style={{ backgroundImage: `url(${BgImage})` }} className="absolute inset-0 bg-cover bg-center z-0">
         {/* Tint Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>

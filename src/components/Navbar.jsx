@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Logo from '../assets/images/Products/Al-Mango-Logo.png';
-import CartIcon from '../assets/icons/Cart.png';
+import CartIcon from '../assets/icons/cartOne.png';
 import MenuIcon from '../assets/icons/Menu.png';
 import LogoText from '../assets/Icons/Al-Mango-Text.png'
 import { motion } from 'framer-motion';
@@ -73,18 +73,18 @@ function Header() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className={`flex justify-between items-center px-2 w-screen h-14 lg:h-16 fixed top-1 left-0 z-50 transition-all duration-300 ${headerBgColor}`}
+      className={`flex justify-between items-center px-2 w-screen h-14 lg:h-16 fixed top-0 left-0 z-50 transition-all duration-300 ${headerBgColor}`}
     >
       <ScrollToTop />
       {/* Left Section: Logo and Brand Name */}
       <Link to={'/'}><div className="flex items-center">
         {/* Responsive Logo */}
-        <div className="w-14 pt-2 sm:w-14 sm:h-16 lg:mt-2 mr-1 sm:mr-4 md:mt-6">
+        <div className="w-14 pt-3 sm:w-14 sm:h-16 lg:mt-2 mr-1 sm:mr-4 md:mt-6">
           <img src={Logo} alt="logo" />
         </div>
         {/* Responsive Brand Name */}
         {/* <h1 className={`font-semibold text-lg sm:text-xl ml-2 ${headerTextColor}`}>Al-Mango</h1> */}
-        <div className="w-24 pt-5 sm:w-24 md:w-24 lg:w-24 sm:h-16 mr-2 sm:mr-4 md:mt-2">
+        <div className="w-24 pt-6 sm:w-24 md:w-24 lg:w-24 sm:h-16 mr-2 sm:mr-4 md:mt-2">
           <img src={LogoText} alt="logo" />
         </div>
       </div>

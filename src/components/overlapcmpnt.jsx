@@ -33,17 +33,21 @@ function Overlapcmpnt({product}) {
               } rounded-full object-cover absolute`}
               style={{ marginTop: index === 1 ? '-70px' : '0' }}
             />
-            <div className={`${index === 1 ? "pt-6 px-2 md:pt-0 md:px-12 sm:pt-16 sm:px-4 xs:px-4 " : "pt-6 px-2 md:pt-0 md:px-8 sm:pt-8 sm:px-2 xs:px-4 xs:pt-7"}`}>
-              <h3 className="text-xs xs:text-[14px] sm:text-[14px] md:text-[14px] sm:text-xs md:text-xs lg:text-lg text-center mt-2 sm:mt-3 lg:mt-4 xs:font-thin">
-                {item.name}
-              </h3>
-              <p className="text-xs xs:text-[14px] sm:text-[14px] md:text-[14px] xs:mt-2 xs:mb-4 sm:text-xs mt-2 sm:mt-2 md:mt-3 lg:mt-4 text-center md:text-xs font-thin">
-                {item.price}
-              </p>
-              <p className="text-xs -tracking-wide  xs:text-[9px] sm:text-9px] md:text-[8px] xs:mt-2 sm:text-xs mt-1 text-center md:text-xs">
-                {truncatedDescription(item.homeDescription,25)}
-              </p>
-            </div>
+            <div className={`${index === 1 ? "pt-6 px-2 md:pt-0 md:px-12 sm:pt-16 sm:px-4 xs:px-4" : "pt-6 px-2 md:pt-0 md:px-8 sm:pt-8 sm:px-2 xs:px-4 xs:pt-7"}`}>
+  <h3 className=" text-[10px]  sm:text-[14px] md:text-[14px] sm:text-xs md:text-xs lg:text-lg text-center mt-2 sm:mt-3 lg:mt-4 xs:font-thin">
+    {item.name}
+  </h3>
+  <p className=" text-[8px] sm:text-[14px] md:text-[14px] sm:text-xs mt-1 sm:mt-2 md:mt-3 lg:mt-4 text-center md:text-xs font-thin">
+    {/* Check if item.price is an object and render appropriately */}
+    {typeof item.price === "object"
+      ? `OMR ${item.price.small} - OMR ${item.price.large}` // Adjust based on your price logic
+      : `OMR ${item.price}`} {/* Fallback if single price */}
+  </p>
+  <p className="text-[8px] -tracking-wide  sm:text-9px md:text-[8px] xs:mt-2 sm:text-xs mt-1 text-center md:text-xs">
+    {truncatedDescription(item.description, 25)}
+  </p>
+</div>
+
           </div>
         </div>
        </Link>

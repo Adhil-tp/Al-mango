@@ -9,7 +9,7 @@ function Recommenditem({product}) {
     return description.length > maxLength ? description.slice(0, maxLength) + '...' : description;
   };
 
-  console.log("combo:",product)
+  // console.log("combo:",product)
   return (
     <div  className="relative w-[230px] h-[240px]  border-0 flex-shrink-0 ">
     <img  className="w-full object-cover h-full rounded-2xl " src={product.image} alt="image" /> 
