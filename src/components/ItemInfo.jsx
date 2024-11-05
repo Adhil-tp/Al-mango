@@ -7,6 +7,7 @@ const ItemInfo = ({ product }) => {
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [note, setNote] = useState('');
   const [notes, setNotes] = useState([]);
+  const [selectedSize, setSelectedSize] = useState(null);
 
   const navigate = useNavigate();
   const { addToCart, cartItems } = useCart();
@@ -27,47 +28,67 @@ const ItemInfo = ({ product }) => {
     setIsAddedToCart(isProductInCart);
 
     const savedNotes = localStorage.getItem(`cartItem${product.id}`);
-    if(savedNotes){
-      setNotes(JSON.parse(savedNotes))
+    if (savedNotes) {
+      setNotes(JSON.parse(savedNotes));
     }
   }, [product.id, cartItems]);
 
   // Add product to cart
   const handleAddToCart = () => {
+    if (typeof product.price === 'object' && !selectedSize) {
+      alert('Please select a size before adding to the cart.');
+      return;
+    }
+
+    // Determine the price based on the selected size, or use the product's price if no size is required
+    const price = typeof product.price === 'object'
+      ? (selectedSize === 'small'
+          ? product.price.small.toFixed(3)
+          : product.price.large.toFixed(3))
+      : product.price.toFixed(3);
+      
+    if (price === undefined) {
+      alert('Price for the selected size is not available.');
+      return;
+    }
+
     const newItem = {
       id: product.id,
       name: product.name,
-      price: product.price,
+      price,
       quantity,
+      size: selectedSize,
       note: notes,
       image: product.image,
     };
 
-    localStorage.setItem(`cartItems ${product.id}`, JSON.stringify(notes))
+    localStorage.setItem(`cartItem${product.id}`, JSON.stringify(notes));
 
-    addToCart(newItem); // Using the context API's addToCart method
-    setIsAddedToCart(true); // Mark item as added to cart
-    console.log(newItem)
+    addToCart(newItem);
+    setIsAddedToCart(true);
   };
 
+  // Handle note input change
   const handleNoteChange = (e) => {
     setNote(e.target.value);
   };
 
+  // Submit note
   const handleNoteSubmit = (e) => {
     e.preventDefault();
     if (note.trim() !== '') {
-      const updatedNotes =[...notes, note]
+      const updatedNotes = [...notes, note];
       setNotes(updatedNotes);
       setNote('');
+      localStorage.setItem(`cartItem${product.id}`, JSON.stringify(updatedNotes));
     }
   };
 
+  // Delete a note
   const deleteNote = (indexToDelete) => {
     const updatedNotes = notes.filter((_, index) => index !== indexToDelete);
-    setNotes(updatedNotes)
-
-    localStorage.setItem(`cartItems ${product.id}`,JSON.stringify(updatedNotes))
+    setNotes(updatedNotes);
+    localStorage.setItem(`cartItem${product.id}`, JSON.stringify(updatedNotes));
   };
 
   if (!product) {
@@ -86,13 +107,48 @@ const ItemInfo = ({ product }) => {
       </div>
 
       <div className="p-6 mx-auto flex flex-col w-[90%] sm:bg-white md:bg-white lg:bg-transparent custom-background rounded-lg">
-        <div className="mb-3 flex justify-between">
+        <div className="mb-3 flex justify-between flex-col gap-4 ">
           <h1 className="text-2xl font-bold">{product.name}</h1>
-          <h1 className="text-2xl font-bold">₹{product.price}</h1>
+
+          {typeof product.price === 'object' && !isAddedToCart ? (
+            <div className="flex justify-center gap-14">
+              <button
+                className={`px-2 py-2 rounded ${
+                  selectedSize === 'small'
+                    ? 'bg-orange-500 text-white'
+                    : 'bg-gray-200'
+                }`}
+                onClick={() => setSelectedSize('small')}
+              >
+                Small: OMR {product.price?.small?.toFixed(3)}
+              </button>
+              <button
+                className={`px-2 py-1 rounded ${
+                  selectedSize === 'large'
+                    ? 'bg-orange-500 text-white'
+                    : 'bg-gray-200'
+                }`}
+                onClick={() => setSelectedSize('large')}
+              >
+                Large: OMR {product.price?.large?.toFixed(3)}
+              </button>
+            </div>
+          ) : (
+            <p className="text-lg font-bold text-red-500">
+  {selectedSize
+    ? `${selectedSize.charAt(0).toUpperCase() + selectedSize.slice(1)}: OMR ${
+        selectedSize === 'small'
+          ? product.price?.small?.toFixed(3) // Format the small price
+          : product.price?.large?.toFixed(3) // Format the large price
+      }`
+    : `OMR ${product.price?.small?.toFixed(3) || product.price?.large?.toFixed(3) || 'N/A'}`}
+</p>
+
+          )}
         </div>
+
         <p className="text-sm">{product.description}</p>
 
-        {/* Conditionally show Note Input Form if the product isn't added to cart */}
         {!isAddedToCart && (
           <form onSubmit={handleNoteSubmit} className="-mt-5">
             <input
@@ -109,29 +165,28 @@ const ItemInfo = ({ product }) => {
         )}
 
         {/* Notes Display */}
-        {!isAddedToCart?(
-        <div className="mt-8">
-          <h2 className="text-lg font-bold mb-2">Notes:</h2>
-          {notes.length > 0 ? (
-            <ul className="list-disc pl-4">
-              {notes.map((noteItem, index) => (
-                <li key={`${index}-${noteItem}`} className="text-sm">
-                  {noteItem}
-                  <button
-                    onClick={() => deleteNote(index)}
-                    className="text-red-500 ml-4" 
-                  >
-                    Delete
-                  </button>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-sm text-gray-500">
-              {product.notes ? noteItem : 'No notes added yet.'}</p>
-          )} 
-        </div>
-        ):(null)}
+        {!isAddedToCart && (
+          <div className="mt-8">
+            <h2 className="text-lg font-bold mb-2">Notes:</h2>
+            {notes.length > 0 ? (
+              <ul className="list-disc pl-4">
+                {notes.map((noteItem, index) => (
+                  <li key={`${index}-${noteItem}`} className="text-sm">
+                    {noteItem}
+                    <button
+                      onClick={() => deleteNote(index)}
+                      className="text-red-500 ml-4"
+                    >
+                      Delete
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-gray-500">No notes added yet.</p>
+            )}
+          </div>
+        )}
 
         {/* Quantity and Cart Actions */}
         <div className="pt-8 flex flex-row gap-4">

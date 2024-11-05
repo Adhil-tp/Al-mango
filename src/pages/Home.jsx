@@ -6,10 +6,10 @@ import { useProducts } from '../context/ProductsContext'
 
 const Home = () => {
   const {foodProducts} = useProducts();
-  console.log("Food products:", foodProducts)
+  // console.log("Food products:", foodProducts)
 
   const comboProducts = foodProducts.filter(product => product.category ==="Combos")
-  console.log("Combo Products: ", comboProducts)
+  // console.log("Combo Products: ", comboProducts)
   
   return (
     <div className="w-[100%]  min-h-screen sm:w-screen bg-white">
