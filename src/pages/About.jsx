@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ProductImage from "../assets/images/ProductImage.jpg"
 import { useLocation } from "react-router-dom";
+import telimg from '../assets/Icons/telphone.jpg'
 
 const About = () => {
     const location =useLocation()
@@ -25,19 +26,58 @@ const About = () => {
             </div>
             <h1 className="pt-14 text-2xl">Reach out at our branches</h1>
             <div className="pt-10 gap-4 flex xs:flex-col md:flex-row lg:flex-row xs:w-3/4 md:w-1/2 mx-auto justify-center items-center">
-            <div className="flex flex-col items-center">
-                <img className="xs:w-48 md:w-60 rounded-lg" src={ProductImage} alt="branch1" />
-                <p>Branch 1</p>
+            <div className="flex flex-col xs:items-center md:mb-8">
+                {/* <img className="xs:w-48 md:w-60 rounded-lg" src={ProductImage} alt="branch1" /> */}
+                <p>Near City Cinema</p>
+                <p>Sur club souq complex</p>
+                <div className="flex items-center space-x-2 md:w-28">
+                <img src={telimg} alt="phone" className="w-5 h-5 sm:w-6 sm:h-6" /><p>7146 1234</p>
+                </div>
             </div>
-            <div className="flex flex-col items-center">
-                <img className="xs:w-48 md:w-60 rounded-lg" src={ProductImage} alt="branch1" />
-                <p>Branch 1</p>
+            <div className="flex flex-col xs:items-center xs:pt-2 md:mb-6">
+                {/* <img className="xs:w-48 md:w-60 rounded-lg" src={ProductImage} alt="branch1" /> */}
+                <p>Al Sharia - Sur</p>
+                <div className="flex items-center space-x-2 md:w-28">
+                <img src={telimg} alt="phone" className="w-5 h-5 sm:w-6 sm:h-6" />
+                <p>9576 0011</p>
+                </div>
             </div>
-            <div id="contactSection" className="flex flex-col items-center">
-                <img className="xs:w-48 md:w-60 rounded-lg" src={ProductImage} alt="branch1" />
-                <p>Branch 1</p>
+            <div id="contactSection" className="flex flex-col xs:items-center xs:pt-2 md:items-start md:mb-6">
+                {/* <img className="xs:w-48 md:w-60 rounded-lg" src={ProductImage} alt="branch1" /> */}
+                <p>Jabal Shams Road</p>
+                <p>Al Hamra</p>
+                <div className="flex items-center space-x-2 md:w-28">
+                <img src={telimg} alt="phone" className="w-5 h-5 sm:w-6 sm:h-6" />
+                <p>9549 9533</p>
+                </div>
             </div>
-
+            <div id="contactSection" className="flex flex-col xs:items-center xs:pt-2 md:items-start md:mb-6">
+                {/* <img className="xs:w-48 md:w-60 rounded-lg" src={ProductImage} alt="branch1" /> */}
+                <p>Near Bank Dhofar</p>
+                <p>Al Kamil</p>
+                <div className="flex items-center space-x-2 md:w-28">
+                <img src={telimg} alt="phone" className="w-5 h-5 sm:w-6 sm:h-6" />
+                <p>9864 6463</p>
+                </div>
+            </div>
+            <div id="contactSection" className="flex flex-col xs:items-center xs:pt-2 md:items-start md:mb-6">
+                {/* <img className="xs:w-48 md:w-60 rounded-lg" src={ProductImage} alt="branch1" /> */}
+                <p>Saih Senida</p>
+                <p>Jalan Bani Buali</p>
+                <div className="flex items-center space-x-2 md:w-28">
+                <img src={telimg} alt="phone" className="w-5 h-5 sm:w-6 sm:h-6" />
+                <p>9713 2343</p>
+                </div>
+            </div>
+            <div id="contactSection" className="flex flex-col xs:items-center xs:pt-2 md:mb-6">
+                {/* <img className="xs:w-48 md:w-60 rounded-lg" src={ProductImage} alt="branch1" /> */}
+                <p>Near Bank Dhofar</p>
+                <p>Jalan Bani Bu Hassan</p>
+                <div className="flex items-center space-x-2 md:w-28">
+                <img src={telimg} alt="phone" className="w-5 h-5 sm:w-6 sm:h-6" />
+                <p>9157 1013</p>
+                </div>
+            </div>
             </div>
         </div>
     )
