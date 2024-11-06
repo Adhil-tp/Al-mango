@@ -11,8 +11,10 @@ const ViewCart = () => {
   const handleViewCart = ()=>{
     navigate('/cart')
   }
+
+
   return (
-    <div className='bg-orange-200  fixed bottom-0  flex flex-row w-screen items-center justify-between p-4 '>
+    <div className='bg-orange-200 sticky bottom-0   flex flex-row w-screen items-center justify-between p-4'>
       <div className='flex flex-row gap-5 items-center justify-center'>
         <img src={lastCartItem.image} alt="productImage" className='w-8 h-8 rounded sm:w-10 sm:h-10' />
         <div>

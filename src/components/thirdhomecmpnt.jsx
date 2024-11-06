@@ -2,7 +2,7 @@ import React from "react";
 import Recommenditem from "../components/recommenditem";
 
 function ThirdComponent({ products }) {
-  console.log("Products received in ThirdComponent:", products)
+  // console.log("Products received in ThirdComponent:", products)
 
   if (!products) {
     return <div>No products available.</div>
@@ -10,7 +10,7 @@ function ThirdComponent({ products }) {
 
   const comboProducts = products.filter(product => product.category === 'Combos');
 
-  console.log("Filtered comboProducts:", comboProducts);
+  // console.log("Filtered comboProducts:", comboProducts);
 
   return (
     <div className="bg-white w-screen h-auto px-4 sm:px-6 lg:px-8 pb-24">

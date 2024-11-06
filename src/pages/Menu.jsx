@@ -30,15 +30,16 @@ const Menu = () => {
 
   const handleAddToCart = (product) => {
     addToCart(product); // Call the addToCart function from context
-    console.log('cart:',product)
+    // console.log('cart:',product)
   };
 
   return (
-    <div className='mt-16 w-screen h-screen bg-stone-100 flex flex-col items-center'>
+    <>
+    <div className='sm:mt-14 lg:mt-16 w-screen  min-h-screen  bg-stone-100 flex flex-col items-center'>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={filterProducts}/>
       <div className='flex justify-center w-screen'>
       </div>
-      <div className='grid grid-cols-1 six:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-8 overflow-auto w-full'>
+      <div className='grid grid-cols-1 six:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-16 overflow-auto w-full'>
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product,index) => (
             <MenuProduct 
@@ -52,8 +53,9 @@ const Menu = () => {
           <p className="text-center text-gray-500">No products found in this category.</p>
         )}
       </div>
-      {cartItems.length > 0 && <ViewCart />}
     </div>
+  {cartItems.length > 0 && <ViewCart />}
+  </>
   );
 };
 
