@@ -22,13 +22,14 @@ const ProductDetails = () => {
   if(!product){
     return <p>Product not found</p>
   }
-
+  // console.log(product)
   return (
 <div className="bg-theme">
   <ItemInfo product={product} />
   <Description product={product} />
-  <RelatedItems relatedProducts={foodProducts} currentProductId={product.category}/>
+  {/* <RelatedItems relatedProducts={foodProducts} currentProductId={product.category}/> */}
   {cartItems.length > 0 && <ViewCart />}
+
 </div>  
   )
 }

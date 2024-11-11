@@ -5,6 +5,7 @@ import CartEmpty from "../components/CartEmpty";
 import { CartContext } from "../context/CartContext";
 import OrderFormModal from "../components/OrderForm";
 import { useCart } from "../context/CartContext";
+import branchContacts from "../data/branches"
 // import { toast } from 'react-hot-toast';  // Import toast from react-hot-toast
 
 const Cart = () => {
@@ -21,6 +22,7 @@ const Cart = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [tableId, setTableId] = useState("");
+    const [branchNumber, setBranchNumber] = useState(null)
 
     const handlePlaceOrder = () => {
         setIsModalOpen(true);
@@ -123,7 +125,7 @@ const Cart = () => {
                 />
             )}
         </div>
-         <div className="sticky  bottom-0 bg-white w-full ">
+         <div className="sticky bottom-0 bg-white w-full ">
          {cartItems.length === 0 ?(
              null
          ):(
