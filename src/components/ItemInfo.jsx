@@ -3,6 +3,7 @@ import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const ItemInfo = ({ product }) => {
+  console.log(product)
   const [quantity, setQuantity] = useState(1);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [note, setNote] = useState('');
@@ -141,7 +142,7 @@ const ItemInfo = ({ product }) => {
           ? product.price?.small?.toFixed(3) // Format the small price
           : product.price?.large?.toFixed(3) // Format the large price
       }`
-    : `OMR ${product.price?.small?.toFixed(3) || product.price?.large?.toFixed(3) || 'N/A'}`}
+    : `OMR ${product.price?.small?.toFixed(3) || product.price?.large?.toFixed(3) || product.price || 'N/A'}`}
 </p>
 
           )}
