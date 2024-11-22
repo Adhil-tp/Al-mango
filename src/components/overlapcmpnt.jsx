@@ -14,7 +14,7 @@ function Overlapcmpnt({product}) {
       variants={fadeIn("up", 0.2)}
       initial="hidden"
       whileInView={"show"}
-      className=" flex sm:justify-between justify-center items-center gap-3 sm:p-6 pt-12 xs:pt-20 md:pt-24 m-0 flex-nowrap top-3 md:top-8 lg:top-4 relative "
+      className=" flex sm:justify-between justify-center items-center gap-3 sm:p-2 pt-12 xs:pt-20 md:pt-24 m-0 flex-nowrap top-3 md:top-8 lg:top-4 relative "
     >
       {product.map((item, index) => (
       <Link to={`/product/${item.id}`} key={item.id}>
