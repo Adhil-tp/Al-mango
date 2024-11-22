@@ -84,7 +84,7 @@ const Cart = () => {
 
     const sendQueryToWhatsapp = (query) => {
         const phoneNumber = "+918086701578";
-        const message = encodeURIComponent(`Hello, I would like to order: ${query}`);
+        const message = `Hello, I would like to order: ${query}`;
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
 
         window.open(whatsappUrl, '_blank');
