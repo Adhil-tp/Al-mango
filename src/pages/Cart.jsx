@@ -40,7 +40,6 @@ const Cart = () => {
         }));
 
         const orderMessage = `
-        New Order Received! 🛎️
 
         Table ID: ${tableId}
 
