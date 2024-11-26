@@ -35,25 +35,24 @@ const Cart = () => {
             name: product.name,
             tableId: tableId,
             notes: product.note,
-            size:product.size,
+            size: product.size,
             price: typeof product.price === "object" ? (product.price === 'large' ? product.price.large : product.price.small) : product.price // Use large price if available
         }));
 
-        const orderMessage = `
-        New Order Received! 🛎️
+        const orderMessage = `\n
 
-        Table ID: ${tableId}
+        *Table ID:* ${tableId}\n
 
-        Order Details:
+        *Order Details:*\n
         ${orderDetails.map((item, index) => `
-            ${index + 1}. Product: ${item.name}
-            - Size : ${item.size || 'No sizes'}
-            - Price: OMR ${item.price.toFixed(2)}
-            - Notes: ${item.notes || 'No notes added'}
-        `).join('')}
+            ${index + 1}. *Product* :  ${item.name}\n
+             - *Size* : ${item.size || 'No sizes'}\n
+             - *Price* : OMR ${item.price.toFixed(2)}\n
+             - *Notes* : ${item.notes || 'No notes added'}
+        `).join('\n\n')}\n\n
 
-        Total Items: ${cartItems.length}
-        Total Amount: OMR ${calculateTotal().toFixed(2)}
+        *Total Items:* ${cartItems.length}\n
+        *Total Amount:* OMR ${calculateTotal().toFixed(2)}
         `;
 
         // Send the order message via WhatsApp
@@ -61,7 +60,7 @@ const Cart = () => {
         console.log(orderMessage)
 
         setIsModalOpen(false);
-        
+
         // Show success toast using react-hot-toast
         //   toast.success("🎉 Order Placed Successfully!", {
         //      icon: '✅',  // Tick icon
@@ -84,56 +83,57 @@ const Cart = () => {
 
     const sendQueryToWhatsapp = (query) => {
         const phoneNumber = "+918086701578";
-        const message = encodeURIComponent(`Hello, I would like to order: ${query}`);
-        const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+        const encodedMessage =`Hello, I would like to order: ${encodeURIComponent(query)}`;
+        // const message = `Hello, I would like to order:\n${query}`;
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
         window.open(whatsappUrl, '_blank');
     };
 
     return (
         <>
-        <div className="flex flex-col min-h-screen  w-[100%] pt-16 ">
-            <div className="flex-1 bg-theme">
-                <h1 className="text-3xl font-semibold pl-8 p-4">Cart</h1>
-                <div className="flex  flex-col  rounded-xlg justify-between m-6 lg:m-16 ">
-                    {cartItems.length === 0 ? (
-                        <CartEmpty />
-                    ) : (
-                        <>
-                            <div className="md:grid grid-cols-2 space-x-2 gap-8 ">
-                                {cartItems.map((product, index) => (
-                                    <CartItem
-                                        key={`${product.id}-${index}`}
-                                        product={product}
-                                        incrementItem={incrementItem}
-                                        decrementItem={decrementItem}
-                                        updateNote={updateNote}
-                                        deleteItem={deleteItem}
-                                    />
-                                ))}
-                            </div>
-                        </>
-                    )}
+            <div className="flex flex-col min-h-screen  w-[100%] pt-16 ">
+                <div className="flex-1 bg-theme">
+                    <h1 className="text-3xl font-semibold pl-8 p-4">Cart</h1>
+                    <div className="flex  flex-col  rounded-xlg justify-between m-6 lg:m-16 ">
+                        {cartItems.length === 0 ? (
+                            <CartEmpty />
+                        ) : (
+                            <>
+                                <div className="md:grid grid-cols-2 space-x-2 gap-8 ">
+                                    {cartItems.map((product, index) => (
+                                        <CartItem
+                                            key={`${product.id}-${index}`}
+                                            product={product}
+                                            incrementItem={incrementItem}
+                                            decrementItem={decrementItem}
+                                            updateNote={updateNote}
+                                            deleteItem={deleteItem}
+                                        />
+                                    ))}
+                                </div>
+                            </>
+                        )}
+                    </div>
                 </div>
+                {isModalOpen && (
+                    <OrderFormModal
+                        tableId={tableId}
+                        setTableId={setTableId}
+                        confirmOrder={handleConfirmOrder}
+                        closeModal={() => setIsModalOpen(false)}
+                    />
+                )}
             </div>
-            {isModalOpen && (
-                <OrderFormModal
-                    tableId={tableId}
-                    setTableId={setTableId}
-                    confirmOrder={handleConfirmOrder}
-                    closeModal={() => setIsModalOpen(false)}
-                />
-            )}
-        </div>
-         <div className="sticky bottom-0 bg-white w-full ">
-         {cartItems.length === 0 ?(
-             null
-         ):(
-             
-             <CartTotal total={calculateTotal()} placeOrder={handlePlaceOrder} />
-         )}
-         </div>
-         </>
+            <div className="sticky bottom-0 bg-white w-full ">
+                {cartItems.length === 0 ? (
+                    null
+                ) : (
+
+                    <CartTotal total={calculateTotal()} placeOrder={handlePlaceOrder} />
+                )}
+            </div>
+        </>
     );
 };
 
