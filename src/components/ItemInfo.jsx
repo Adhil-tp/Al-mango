@@ -1,36 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import { useCart } from '../context/CartContext';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react"
+import { useCart } from "../context/CartContext"
+import { useNavigate } from "react-router-dom"
 
 const ItemInfo = ({ product }) => {
-  const [quantity, setQuantity] = useState(1);
-  const [isAddedToCart, setIsAddedToCart] = useState(false);
-  const [note, setNote] = useState('');
-  const [notes, setNotes] = useState([]);
+  const [quantity, setQuantity] = useState(1)
+  const [isAddedToCart, setIsAddedToCart] = useState(false)
+  const [note, setNote] = useState("")
+  const [notes, setNotes] = useState([])
 
-  const navigate = useNavigate();
-  const { addToCart, cartItems } = useCart();
+  const navigate = useNavigate()
+  const { addToCart, cartItems } = useCart()
 
   // Increase quantity
   const increaseQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
+    setQuantity((prevQuantity) => prevQuantity + 1)
+  }
 
   // Decrease quantity
   const decreaseQuantity = () => {
-    setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
-  };
+    setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1))
+  }
 
   useEffect(() => {
     // Check if the product is already in the cart
-    const isProductInCart = cartItems.some((item) => item.id === product.id);
-    setIsAddedToCart(isProductInCart);
+    const isProductInCart = cartItems.some((item) => item.id === product.id)
+    setIsAddedToCart(isProductInCart)
 
-    const savedNotes = localStorage.getItem(`cartItem${product.id}`);
-    if(savedNotes){
+    const savedNotes = localStorage.getItem(`cartItem${product.id}`)
+    if (savedNotes) {
       setNotes(JSON.parse(savedNotes))
     }
-  }, [product.id, cartItems]);
+  }, [product.id, cartItems])
 
   // Add product to cart
   const handleAddToCart = () => {
@@ -41,37 +41,40 @@ const ItemInfo = ({ product }) => {
       quantity,
       note: notes,
       image: product.image,
-    };
+    }
 
     localStorage.setItem(`cartItems ${product.id}`, JSON.stringify(notes))
 
-    addToCart(newItem); // Using the context API's addToCart method
-    setIsAddedToCart(true); // Mark item as added to cart
+    addToCart(newItem) // Using the context API's addToCart method
+    setIsAddedToCart(true) // Mark item as added to cart
     console.log(newItem)
-  };
+  }
 
   const handleNoteChange = (e) => {
-    setNote(e.target.value);
-  };
+    setNote(e.target.value)
+  }
 
   const handleNoteSubmit = (e) => {
-    e.preventDefault();
-    if (note.trim() !== '') {
-      const updatedNotes =[...notes, note]
-      setNotes(updatedNotes);
-      setNote('');
+    e.preventDefault()
+    if (note.trim() !== "") {
+      const updatedNotes = [...notes, note]
+      setNotes(updatedNotes)
+      setNote("")
     }
-  };
+  }
 
   const deleteNote = (indexToDelete) => {
-    const updatedNotes = notes.filter((_, index) => index !== indexToDelete);
+    const updatedNotes = notes.filter((_, index) => index !== indexToDelete)
     setNotes(updatedNotes)
 
-    localStorage.setItem(`cartItems ${product.id}`,JSON.stringify(updatedNotes))
-  };
+    localStorage.setItem(
+      `cartItems ${product.id}`,
+      JSON.stringify(updatedNotes)
+    )
+  }
 
   if (!product) {
-    return null;
+    return null
   }
 
   return (
@@ -109,29 +112,30 @@ const ItemInfo = ({ product }) => {
         )}
 
         {/* Notes Display */}
-        {!isAddedToCart?(
-        <div className="mt-8">
-          <h2 className="text-lg font-bold mb-2">Notes:</h2>
-          {notes.length > 0 ? (
-            <ul className="list-disc pl-4">
-              {notes.map((noteItem, index) => (
-                <li key={`${index}-${noteItem}`} className="text-sm">
-                  {noteItem}
-                  <button
-                    onClick={() => deleteNote(index)}
-                    className="text-red-500 ml-4" 
-                  >
-                    Delete
-                  </button>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-sm text-gray-500">
-              {product.notes ? noteItem : 'No notes added yet.'}</p>
-          )} 
-        </div>
-        ):(null)}
+        {!isAddedToCart ? (
+          <div className="mt-8">
+            <h2 className="text-lg font-bold mb-2">Notes:</h2>
+            {notes.length > 0 ? (
+              <ul className="list-disc pl-4">
+                {notes.map((noteItem, index) => (
+                  <li key={`${index}-${noteItem}`} className="text-sm">
+                    {noteItem}
+                    <button
+                      onClick={() => deleteNote(index)}
+                      className="text-red-500 ml-4"
+                    >
+                      Delete
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-gray-500">
+                {product.notes ? noteItem : "No notes added yet."}
+              </p>
+            )}
+          </div>
+        ) : null}
 
         {/* Quantity and Cart Actions */}
         <div className="pt-8 flex flex-row gap-4">
@@ -161,7 +165,7 @@ const ItemInfo = ({ product }) => {
           ) : (
             <button
               className="p-2 bg-buttons"
-              onClick={() => navigate('/cart')}
+              onClick={() => navigate("/cart")}
             >
               View Cart
             </button>
@@ -169,7 +173,7 @@ const ItemInfo = ({ product }) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ItemInfo;
+export default ItemInfo
