@@ -15,7 +15,7 @@ function App() {
   return (
     <ProductsProvider>
      <BrowserRouter>
-      <Toaster  containerStyle={{top:400,left:20,bottom:20,right:20}}/>
+      {/* <Toaster  containerStyle={{top:400,left:20,bottom:20,right:20}}/> */}
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />}  />

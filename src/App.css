@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   margin: 0;
+  box-sizing: border-box;
 }
 
 #root {
@@ -9,9 +10,6 @@ html, body {
   min-height: 100vh; /* Ensure the content fills the viewport */
 }
 
-main {
-  flex: 1; /* Pushes footer to the bottom */
-}
 
 footer {
   position: relative;

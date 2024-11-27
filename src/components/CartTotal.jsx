@@ -11,9 +11,9 @@ const CartTotal = ({ total,placeOrder}) => {
 
 
     return (
-        <div className="pt-4 pb-4 flex flex-row items-center justify-center space-x-4 sm:space-x-4 ">
+        <div className=" py-0 sm:py-2    flex flex-row items-center justify-center sm:space-x-4 ">
                     <p className="text-xl sm:text-xl">Total:</p>
-                    <p className="text-xl sm:text-xl font-bold pr-16">₹{total.toFixed(2)}</p>
+                    <p className="text-xl sm:text-xl font-bold pr-16">OMR {total.toFixed(2)}</p>
 
                     <div className="flex justify-center mt-4 mb-2">
                         <button

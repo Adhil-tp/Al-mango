@@ -7,10 +7,10 @@ import ScrollToTop from './ScrollToTop'
 
 const AppLayout = () => {
   return (
-    <div className='flex flex-col mi-h-screen'>
+    <div className='flex flex-col min-h-screen'>
       <ScrollToTop />
       <Header />
-      <main className='flex-1'> 
+      <main className='flex-grow'> 
          <Outlet />
       </main>
       <Footer />

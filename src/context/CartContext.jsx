@@ -1,4 +1,4 @@
-// src/context/CartContext.jsx
+
 import React, { createContext, useEffect, useState, useContext } from "react";
 
 // Create the CartContext
@@ -16,8 +16,23 @@ export const CartProvider = ({ children }) => {
     }, [cartItems]);
 
     const addToCart = (product) => {
-        setCartItems((prevItems) => [...prevItems, product]);
+        const existingProductIndex = cartItems.findIndex((item) => item.id === product.id && item.size === product.size);
+    
+        if (existingProductIndex >= 0) {
+            // If the product already exists in the cart, update its quantity
+            const updatedCartItems = [...cartItems];
+            updatedCartItems[existingProductIndex].quantity += product.quantity;
+            setCartItems(updatedCartItems);
+        } else {
+            // If the product does not exist in the cart, add it
+            const cartProduct = {
+                ...product,
+                quantity: product.quantity,
+            };
+            setCartItems((prevItems) => [...prevItems, cartProduct]);
+        }
     };
+    
 
     const incrementItem = (id) => {
         setCartItems((prevItems) =>
@@ -44,16 +59,15 @@ export const CartProvider = ({ children }) => {
     const updateNote = (id, newNote) => {
         setCartItems((prevItems) =>
             prevItems.map((item) =>
-                item.id === id ? {...item,note: [...(item.note || []) ,newNote] } : item
+                item.id === id ? { ...item, note: [...(item.note || []), newNote] } : item
             )
         );
     };
 
     const calculateTotal = () => {
-        return cartItems.reduce(
-            (total, item) => total + item.price * item.quantity,
-            0
-        );
+        return cartItems.reduce((total, item) => {
+            return total + item.price * item.quantity;
+        }, 0);
     };
 
     return (
