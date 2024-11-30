@@ -1,56 +1,57 @@
-import React, { useEffect, useState } from 'react';
-import { useCart } from '../context/CartContext';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react"
+import { useCart } from "../context/CartContext"
+import { useNavigate } from "react-router-dom"
 
 const ItemInfo = ({ product }) => {
   console.log(product)
-  const [quantity, setQuantity] = useState(1);
-  const [isAddedToCart, setIsAddedToCart] = useState(false);
-  const [note, setNote] = useState('');
-  const [notes, setNotes] = useState([]);
-  const [selectedSize, setSelectedSize] = useState(null);
+  const [quantity, setQuantity] = useState(1)
+  const [isAddedToCart, setIsAddedToCart] = useState(false)
+  const [note, setNote] = useState("")
+  const [notes, setNotes] = useState([])
+  const [selectedSize, setSelectedSize] = useState(null)
 
-  const navigate = useNavigate();
-  const { addToCart, cartItems } = useCart();
+  const navigate = useNavigate()
+  const { addToCart, cartItems } = useCart()
 
   // Increase quantity
   const increaseQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
+    setQuantity((prevQuantity) => prevQuantity + 1)
+  }
 
   // Decrease quantity
   const decreaseQuantity = () => {
-    setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
-  };
+    setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1))
+  }
 
   useEffect(() => {
     // Check if the product is already in the cart
-    const isProductInCart = cartItems.some((item) => item.id === product.id);
-    setIsAddedToCart(isProductInCart);
+    const isProductInCart = cartItems.some((item) => item.id === product.id)
+    setIsAddedToCart(isProductInCart)
 
-    const savedNotes = localStorage.getItem(`cartItem${product.id}`);
+    const savedNotes = localStorage.getItem(`cartItem${product.id}`)
     if (savedNotes) {
-      setNotes(JSON.parse(savedNotes));
+      setNotes(JSON.parse(savedNotes))
     }
-  }, [product.id, cartItems]);
+  }, [product.id, cartItems])
 
   // Add product to cart
   const handleAddToCart = () => {
-    if (typeof product.price === 'object' && !selectedSize) {
-      alert('Please select a size before adding to the cart.');
-      return;
+    if (typeof product.price === "object" && !selectedSize) {
+      alert("Please select a size before adding to the cart.")
+      return
     }
 
     // Determine the price based on the selected size, or use the product's price if no size is required
-    const price = typeof product.price === 'object'
-      ? (selectedSize === 'small'
+    const price =
+      typeof product.price === "object"
+        ? selectedSize === "small"
           ? product.price.small.toFixed(3)
-          : product.price.large.toFixed(3))
-      : product.price.toFixed(3);
-      
+          : product.price.large.toFixed(3)
+        : product.price.toFixed(3)
+
     if (price === undefined) {
-      alert('Price for the selected size is not available.');
-      return;
+      alert("Price for the selected size is not available.")
+      return
     }
 
     const newItem = {
@@ -61,39 +62,42 @@ const ItemInfo = ({ product }) => {
       size: selectedSize,
       note: notes,
       image: product.image,
-    };
+    }
 
-    localStorage.setItem(`cartItem${product.id}`, JSON.stringify(notes));
+    localStorage.setItem(`cartItem${product.id}`, JSON.stringify(notes))
 
-    addToCart(newItem);
-    setIsAddedToCart(true);
-  };
+    addToCart(newItem)
+    setIsAddedToCart(true)
+  }
 
   // Handle note input change
   const handleNoteChange = (e) => {
-    setNote(e.target.value);
-  };
+    setNote(e.target.value)
+  }
 
   // Submit note
   const handleNoteSubmit = (e) => {
-    e.preventDefault();
-    if (note.trim() !== '') {
-      const updatedNotes = [...notes, note];
-      setNotes(updatedNotes);
-      setNote('');
-      localStorage.setItem(`cartItem${product.id}`, JSON.stringify(updatedNotes));
+    e.preventDefault()
+    if (note.trim() !== "") {
+      const updatedNotes = [...notes, note]
+      setNotes(updatedNotes)
+      setNote("")
+      localStorage.setItem(
+        `cartItem${product.id}`,
+        JSON.stringify(updatedNotes)
+      )
     }
-  };
+  }
 
   // Delete a note
   const deleteNote = (indexToDelete) => {
-    const updatedNotes = notes.filter((_, index) => index !== indexToDelete);
-    setNotes(updatedNotes);
-    localStorage.setItem(`cartItem${product.id}`, JSON.stringify(updatedNotes));
-  };
+    const updatedNotes = notes.filter((_, index) => index !== indexToDelete)
+    setNotes(updatedNotes)
+    localStorage.setItem(`cartItem${product.id}`, JSON.stringify(updatedNotes))
+  }
 
   if (!product) {
-    return null;
+    return null
   }
 
   return (
@@ -111,40 +115,46 @@ const ItemInfo = ({ product }) => {
         <div className="mb-3 flex justify-between flex-col gap-4 ">
           <h1 className="text-2xl font-bold">{product.name}</h1>
 
-          {typeof product.price === 'object' && !isAddedToCart ? (
+          {typeof product.price === "object" && !isAddedToCart ? (
             <div className="flex justify-center gap-14">
               <button
                 className={`px-2 py-2 rounded ${
-                  selectedSize === 'small'
-                    ? 'bg-orange-500 text-white'
-                    : 'bg-gray-200'
+                  selectedSize === "small"
+                    ? "bg-orange-500 text-white"
+                    : "bg-gray-200"
                 }`}
-                onClick={() => setSelectedSize('small')}
+                onClick={() => setSelectedSize("small")}
               >
                 Small: OMR {product.price?.small?.toFixed(3)}
               </button>
               <button
                 className={`px-2 py-1 rounded ${
-                  selectedSize === 'large'
-                    ? 'bg-orange-500 text-white'
-                    : 'bg-gray-200'
+                  selectedSize === "large"
+                    ? "bg-orange-500 text-white"
+                    : "bg-gray-200"
                 }`}
-                onClick={() => setSelectedSize('large')}
+                onClick={() => setSelectedSize("large")}
               >
                 Large: OMR {product.price?.large?.toFixed(3)}
               </button>
             </div>
           ) : (
             <p className="text-lg font-bold text-red-500">
-  {selectedSize
-    ? `${selectedSize.charAt(0).toUpperCase() + selectedSize.slice(1)}: OMR ${
-        selectedSize === 'small'
-          ? product.price?.small?.toFixed(3) // Format the small price
-          : product.price?.large?.toFixed(3) // Format the large price
-      }`
-    : `OMR ${product.price?.small?.toFixed(3) || product.price?.large?.toFixed(3) || product.price || 'N/A'}`}
-</p>
-
+              {selectedSize
+                ? `${
+                    selectedSize.charAt(0).toUpperCase() + selectedSize.slice(1)
+                  }: OMR ${
+                    selectedSize === "small"
+                      ? product.price?.small?.toFixed(3) // Format the small price
+                      : product.price?.large?.toFixed(3) // Format the large price
+                  }`
+                : `OMR ${
+                    product.price?.small?.toFixed(3) ||
+                    product.price?.large?.toFixed(3) ||
+                    product.price ||
+                    "N/A"
+                  }`}
+            </p>
           )}
         </div>
 
@@ -217,7 +227,7 @@ const ItemInfo = ({ product }) => {
           ) : (
             <button
               className="p-2 bg-buttons"
-              onClick={() => navigate('/cart')}
+              onClick={() => navigate("/cart")}
             >
               View Cart
             </button>
@@ -225,7 +235,7 @@ const ItemInfo = ({ product }) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ItemInfo;
+export default ItemInfo
