@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
-import deletIcon from 'src/assets/items/icons/deleteIcon.svg'
+import deletIcon from '../assets/items/icons/deleteIcon.svg'
 
 const CartItem = ({ product }) => {
     const { incrementItem, decrementItem, deleteItem, updateNote, addToCart } = useCart();
@@ -118,9 +118,7 @@ const CartItem = ({ product }) => {
                     onClick={handleDeleteItem}
                 >
                     <img
-                        // src="src/assets/items/icons/deleteIcon.svg"
-{/*                         src="src\assets\items\icons\deleteIcon.svg" */}
-                        src={deleteIcon}
+                        src={deletIcon}
                         alt="Delete Cart Item"
                         className="w-5 h-5 sm:w-6 sm:h-6"
                     />
